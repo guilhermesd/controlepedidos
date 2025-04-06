@@ -1,0 +1,449 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\estudos\\ControlePedidos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos\\controlepedidos\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos\\controlepedidos\\api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|K8s{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|C:\\estudos\\ControlePedidos\\deployment.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|K8s{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|solutionrelative:deployment.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos\\controlepedidos\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos\\controlepedidos\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos\\controlepedidos\\api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos\\controlepedidos\\infrastructure\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos\\controlepedidos\\domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos\\controlepedidos\\application\\usecases\\clientes\\clientesusecases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\usecases\\clientes\\clientesusecases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos\\controlepedidos\\infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos\\controlepedidos\\infrastructure\\migrations\\20250330134756_nomedamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20250330134756_nomedamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos\\controlepedidos\\domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos\\controlepedidos\\infrastructure\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos\\controlepedidos\\api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos\\controlepedidos\\application\\usecases\\produtos\\criarprodutousecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\usecases\\produtos\\criarprodutousecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos\\controlepedidos\\domain\\entities\\pagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\pagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos\\controlepedidos\\domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos\\controlepedidos\\domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos\\controlepedidos\\domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos\\controlepedidos\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos\\controlepedidos\\application\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|K8s{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|C:\\estudos\\ControlePedidos\\api-service.yaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|K8s{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|solutionrelative:api-service.yaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|K8s{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|C:\\estudos\\ControlePedidos\\mysql.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|K8s{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}|solutionrelative:mysql.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos\\controlepedidos\\domain\\interfaces\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 177,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "mysql.yml",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\mysql.yml",
+              "RelativeDocumentMoniker": "mysql.yml",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\mysql.yml",
+              "RelativeToolTip": "mysql.yml",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAADIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-03-31T03:28:21.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Api.csproj",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Api\\Api.csproj",
+              "RelativeDocumentMoniker": "Api\\Api.csproj",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Api\\Api.csproj",
+              "RelativeToolTip": "Api\\Api.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-31T03:11:47.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Api\\appsettings.json",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Api\\appsettings.json",
+              "RelativeToolTip": "Api\\appsettings.json",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAUwAkAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-30T00:30:12.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "deployment.yml",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\deployment.yml",
+              "RelativeDocumentMoniker": "deployment.yml",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\deployment.yml",
+              "RelativeToolTip": "deployment.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-03-31T03:28:07.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Api\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-30T00:33:43.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "api-service.yaml",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\api-service.yaml",
+              "RelativeDocumentMoniker": "api-service.yaml",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\api-service.yaml",
+              "RelativeToolTip": "api-service.yaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-04-03T04:43:22.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Api\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Api\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "Api\\Controllers\\ClienteController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAiwCEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T05:40:51.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProdutoRepository.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAgwCIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T15:10:01.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Produto.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Produto.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Produto.cs",
+              "RelativeToolTip": "Domain\\Entities\\Produto.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T02:11:45.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Api\\Program.cs",
+              "RelativeDocumentMoniker": "Api\\Program.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Api\\Program.cs",
+              "RelativeToolTip": "Api\\Program.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAcwCIAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T05:53:13.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClientesUseCases.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "RelativeToolTip": "Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowC0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T05:36:10.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Cliente.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Cliente.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Cliente.cs",
+              "RelativeToolTip": "Domain\\Entities\\Cliente.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAuwAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T03:34:48.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Infrastructure\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\AppDbContext.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Infrastructure\\AppDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\AppDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T03:18:07.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20250330134756_NomeDaMigration.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAYwDEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T13:48:46.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IClienteRepository.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Domain\\Interfaces\\IClienteRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IClienteRepository.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Domain\\Interfaces\\IClienteRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IClienteRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T05:28:19.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ClienteRepository.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Infrastructure\\Repositories\\ClienteRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ClienteRepository.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Infrastructure\\Repositories\\ClienteRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ClienteRepository.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T05:27:04.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Api\\appsettings.Development.json",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Api\\appsettings.Development.json",
+              "RelativeToolTip": "Api\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-30T00:30:15.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CriarProdutoUseCase.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "RelativeToolTip": "Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T05:35:36.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Pagamento.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Pagamento.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Pagamento.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Pagamento.cs",
+              "RelativeToolTip": "Domain\\Entities\\Pagamento.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T02:14:34.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Pedido.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Pedido.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\Pedido.cs",
+              "RelativeToolTip": "Domain\\Entities\\Pedido.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T02:15:31.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Domain.csproj",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\Domain.csproj",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj",
+              "RelativeToolTip": "Domain\\Domain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-30T04:18:46.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Cpf.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "RelativeToolTip": "Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T03:49:03.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Application.csproj",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-30T04:18:31.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProdutoDTO.cs",
+              "DocumentMoniker": "C:\\estudos\\ControlePedidos\\Application\\DTOs\\ProdutoDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ProdutoDTO.cs",
+              "ToolTip": "C:\\estudos\\ControlePedidos\\Application\\DTOs\\ProdutoDTO.cs",
+              "RelativeToolTip": "Application\\DTOs\\ProdutoDTO.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBZwAkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T02:10:11.216Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 177,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

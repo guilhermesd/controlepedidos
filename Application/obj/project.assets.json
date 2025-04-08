@@ -220,19 +220,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\guilherme.sousa\\.nuget\\packages\\": {}
+    "C:\\Users\\ligia\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\estudos_guilherme\\pedidos2\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-      "outputPath": "C:\\estudos\\ControlePedidos\\Application\\obj\\",
+      "projectPath": "C:\\estudos_guilherme\\pedidos2\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\ligia\\.nuget\\packages\\",
+      "outputPath": "C:\\estudos_guilherme\\pedidos2\\Application\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ligia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -247,8 +252,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj"
+            "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj"
             }
           }
         }
@@ -262,7 +267,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -289,7 +295,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

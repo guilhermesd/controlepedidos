@@ -20,3 +20,15 @@ C:\estudos\ControlePedidos\Domain\obj\Debug\net8.0\Domain.dll
 C:\estudos\ControlePedidos\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\estudos\ControlePedidos\Domain\obj\Debug\net8.0\Domain.pdb
 C:\estudos\ControlePedidos\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\estudos_guilherme\pedidos2\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\estudos_guilherme\pedidos2\Domain\bin\Debug\net8.0\Domain.dll
+C:\estudos_guilherme\pedidos2\Domain\bin\Debug\net8.0\Domain.pdb
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\Domain.dll
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\Domain.pdb
+C:\estudos_guilherme\pedidos2\Domain\obj\Debug\net8.0\ref\Domain.dll

@@ -11,13 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "K8s", "K8s", "{D704D9F3-E9C7-4B93-BF2A-2E75C29AE1A4}"
-	ProjectSection(SolutionItems) = preProject
-		api-service.yaml = api-service.yaml
-		deployment.yml = deployment.yml
-		mysql.yml = mysql.yml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

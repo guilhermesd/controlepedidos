@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\estudos\\ControlePedidos\\Api\\Api.csproj": {}
+    "C:\\estudos_guilherme\\pedidos2\\Api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\estudos\\ControlePedidos\\Api\\Api.csproj": {
+    "C:\\estudos_guilherme\\pedidos2\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos\\ControlePedidos\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\estudos_guilherme\\pedidos2\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\estudos\\ControlePedidos\\Api\\Api.csproj",
-        "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Api\\obj\\",
+        "projectPath": "C:\\estudos_guilherme\\pedidos2\\Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\ligia\\.nuget\\packages\\",
+        "outputPath": "C:\\estudos_guilherme\\pedidos2\\Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ligia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\estudos\\ControlePedidos\\Application\\Application.csproj": {
-                "projectPath": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj"
+              "C:\\estudos_guilherme\\pedidos2\\Application\\Application.csproj": {
+                "projectPath": "C:\\estudos_guilherme\\pedidos2\\Application\\Application.csproj"
               },
-              "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj"
+              "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -47,7 +51,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -87,21 +92,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\estudos\\ControlePedidos\\Application\\Application.csproj": {
+    "C:\\estudos_guilherme\\pedidos2\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\estudos_guilherme\\pedidos2\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Application\\obj\\",
+        "projectPath": "C:\\estudos_guilherme\\pedidos2\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\ligia\\.nuget\\packages\\",
+        "outputPath": "C:\\estudos_guilherme\\pedidos2\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ligia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,8 +125,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj"
+              "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj"
               }
             }
           }
@@ -131,7 +140,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -158,21 +168,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {
+    "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Domain\\obj\\",
+        "projectPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ligia\\.nuget\\packages\\",
+        "outputPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ligia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -198,7 +212,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -219,21 +234,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\obj\\",
+        "projectPath": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ligia\\.nuget\\packages\\",
+        "outputPath": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ligia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -248,8 +267,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj"
+              "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj"
               }
             }
           }
@@ -263,7 +282,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -304,7 +324,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

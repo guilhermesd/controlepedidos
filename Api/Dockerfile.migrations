@@ -1,0 +1,23 @@
+# Etapa base com SDK (precisa do EF CLI)
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS migration
+
+WORKDIR /src
+
+# Copiando os projetos
+COPY ["Api/Api.csproj", "Api/"]
+COPY ["Application/Application.csproj", "Application/"]
+COPY ["Domain/Domain.csproj", "Domain/"]
+COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
+
+RUN dotnet tool install --global dotnet-ef
+ENV PATH="$PATH:/root/.dotnet/tools"
+
+# Restaura os pacotes
+RUN dotnet restore "Api/Api.csproj"
+
+# Copia o restante dos arquivos
+COPY . .
+
+# Executa a migration
+#WORKDIR /src/Infrastructure
+CMD ["dotnet", "ef", "database", "update", "--project", "Infrastructure", "--startup-project", "Api"]

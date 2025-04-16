@@ -27,6 +27,11 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Create ECR repositories if not exist
+      run: |
+        aws ecr describe-repositories --repository-names pedidos-repo || aws ecr create-repository --repository-name pedidos-repo
+        aws ecr describe-repositories --repository-names migration-repo || aws ecr create-repository --repository-name migration-repo
+
     - name: Build Docker image
       run: |
         docker build -f Api/Dockerfile -t pedidos:${{ env.IMAGE_TAG }} .

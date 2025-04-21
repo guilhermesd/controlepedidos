@@ -34,3 +34,7 @@ C:\estudos_guilherme\pedidos2\Application\obj\Debug\net8.0\Application.dll
 C:\estudos_guilherme\pedidos2\Application\obj\Debug\net8.0\refint\Application.dll
 C:\estudos_guilherme\pedidos2\Application\obj\Debug\net8.0\Application.pdb
 C:\estudos_guilherme\pedidos2\Application\obj\Debug\net8.0\ref\Application.dll
+C:\estudos_guilherme\pedidos2\Application\bin\Debug\net8.0\Crosscutting.dll
+C:\estudos_guilherme\pedidos2\Application\bin\Debug\net8.0\Infrastructure.dll
+C:\estudos_guilherme\pedidos2\Application\bin\Debug\net8.0\Crosscutting.pdb
+C:\estudos_guilherme\pedidos2\Application\bin\Debug\net8.0\Infrastructure.pdb

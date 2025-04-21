@@ -11,7 +11,7 @@ namespace Domain.Entities.ValueObjects
             if (!Validar(numero))
                 throw new ArgumentException("CPF inválido.");
 
-            Numero = numero;
+            Numero = ApenasNumeros(numero);
         }
 
         private string ApenasNumeros(string palavra)

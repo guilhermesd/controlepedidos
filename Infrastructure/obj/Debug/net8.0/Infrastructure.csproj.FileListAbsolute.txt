@@ -38,3 +38,5 @@ C:\estudos_guilherme\pedidos2\Infrastructure\obj\Debug\net8.0\refint\Infrastruct
 C:\estudos_guilherme\pedidos2\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\estudos_guilherme\pedidos2\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 C:\estudos_guilherme\pedidos2\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\estudos_guilherme\pedidos2\Infrastructure\bin\Debug\net8.0\Crosscutting.dll
+C:\estudos_guilherme\pedidos2\Infrastructure\bin\Debug\net8.0\Crosscutting.pdb

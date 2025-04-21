@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\estudos_guilherme\\pedidos2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|c:\\estudos_guilherme\\pedidos2\\tests\\unidade\\domain\\entities\\valueobjects\\cpftests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|solutionrelative:tests\\unidade\\domain\\entities\\valueobjects\\cpftests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos_guilherme\\pedidos2\\domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos_guilherme\\pedidos2\\infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|c:\\estudos_guilherme\\pedidos2\\tests\\tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|solutionrelative:tests\\tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos_guilherme\\pedidos2\\application\\usecases\\produtos\\criarprodutousecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\usecases\\produtos\\criarprodutousecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos_guilherme\\pedidos2\\domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\dockerfile.migrations||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\dockerfile.migrations||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -86,11 +98,50 @@
       "DocumentGroups": [
         {
           "DockedHeight": 177,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\AppDbContext.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\AppDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T07:00:17.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CpfTests.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Tests\\Unidade\\Domain\\Entities\\ValueObjects\\CpfTests.cs",
+              "RelativeDocumentMoniker": "Tests\\Unidade\\Domain\\Entities\\ValueObjects\\CpfTests.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Tests\\Unidade\\Domain\\Entities\\ValueObjects\\CpfTests.cs",
+              "RelativeToolTip": "Tests\\Unidade\\Domain\\Entities\\ValueObjects\\CpfTests.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:57:57.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Tests",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Tests\\Tests.csproj",
+              "RelativeDocumentMoniker": "Tests\\Tests.csproj",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Tests\\Tests.csproj",
+              "RelativeToolTip": "Tests\\Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-21T06:56:48.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Crosscutting",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj",
               "RelativeDocumentMoniker": "Crosscutting\\Crosscutting.csproj",
@@ -103,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ObterProdutosDTO.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\DTOs\\ObterProdutosDTO.cs",
               "RelativeDocumentMoniker": "Crosscutting\\DTOs\\ObterProdutosDTO.cs",
@@ -116,20 +167,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "CriarProdutoUseCase.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
               "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
               "RelativeToolTip": "Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T06:40:35.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ProdutoDTO.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\DTOs\\ProdutoDTO.cs",
               "RelativeDocumentMoniker": "Crosscutting\\DTOs\\ProdutoDTO.cs",
@@ -142,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ProdutoRepository.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Repositories\\ProdutoRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ProdutoRepository.cs",
@@ -155,7 +206,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "Cpf.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "RelativeToolTip": "Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:07:50.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "IProdutoRepository.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Interfaces\\IProdutoRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IProdutoRepository.cs",
@@ -168,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "ClientesUseCases.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Application\\UseCases\\Clientes\\ClientesUseCases.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\Clientes\\ClientesUseCases.cs",
@@ -181,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Mapping.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Application\\Mapping.cs",
               "RelativeDocumentMoniker": "Application\\Mapping.cs",
@@ -194,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "ClienteRepository.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Repositories\\ClienteRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ClienteRepository.cs",
@@ -207,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Produto.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\Produto.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Produto.cs",
@@ -220,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "IClienteRepository.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Interfaces\\IClienteRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IClienteRepository.cs",
@@ -233,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\Cliente.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Cliente.cs",
@@ -246,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\ClienteController.cs",
@@ -259,20 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Cpf.cs",
-              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\ValueObjects\\Cpf.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\ValueObjects\\Cpf.cs",
-              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\ValueObjects\\Cpf.cs",
-              "RelativeToolTip": "Domain\\Entities\\ValueObjects\\Cpf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:07:50.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Dockerfile.migrations",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile.migrations",
               "RelativeDocumentMoniker": "Api\\Dockerfile.migrations",
@@ -285,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\appsettings.json",
               "RelativeDocumentMoniker": "Api\\appsettings.json",
@@ -297,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Api\\appsettings.Development.json",
@@ -310,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Api\\Properties\\launchSettings.json",
@@ -322,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile",
               "RelativeDocumentMoniker": "Api\\Dockerfile",

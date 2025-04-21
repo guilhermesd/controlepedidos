@@ -285,3 +285,5 @@ C:\estudos_guilherme\pedidos2\Api\obj\Debug\net8.0\refint\Api.dll
 C:\estudos_guilherme\pedidos2\Api\obj\Debug\net8.0\Api.pdb
 C:\estudos_guilherme\pedidos2\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\estudos_guilherme\pedidos2\Api\obj\Debug\net8.0\ref\Api.dll
+C:\estudos_guilherme\pedidos2\Api\bin\Debug\net8.0\Crosscutting.dll
+C:\estudos_guilherme\pedidos2\Api\bin\Debug\net8.0\Crosscutting.pdb

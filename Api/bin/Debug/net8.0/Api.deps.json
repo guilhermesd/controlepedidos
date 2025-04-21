@@ -712,7 +712,9 @@
       "Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
-          "Domain": "1.0.0"
+          "Crosscutting": "1.0.0",
+          "Domain": "1.0.0",
+          "Infrastructure": "1.0.0"
         },
         "runtime": {
           "Application.dll": {
@@ -721,7 +723,18 @@
           }
         }
       },
+      "Crosscutting/1.0.0": {
+        "runtime": {
+          "Crosscutting.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Domain/1.0.0": {
+        "dependencies": {
+          "Crosscutting": "1.0.0"
+        },
         "runtime": {
           "Domain.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -731,6 +744,7 @@
       },
       "Infrastructure/1.0.0": {
         "dependencies": {
+          "Crosscutting": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.3",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.3",
@@ -1109,6 +1123,11 @@
       "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
     },
     "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Crosscutting/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

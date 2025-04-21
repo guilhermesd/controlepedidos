@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Crosscutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Crosscutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crosscutting.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Crosscutting/1.0.0": {
+      "type": "project",
+      "path": "../Crosscutting/Crosscutting.csproj",
+      "msbuildProject": "../Crosscutting/Crosscutting.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Crosscutting >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ligia\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj": {
+              "projectPath": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

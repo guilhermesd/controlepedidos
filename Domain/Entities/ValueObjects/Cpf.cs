@@ -8,7 +8,7 @@ namespace Domain.Entities.ValueObjects
 
         public Cpf(string numero)
         {
-            if (string.IsNullOrEmpty(numero) || numero.Length != 11)
+            if (!Validar(numero))
                 throw new ArgumentException("CPF inválido.");
 
             Numero = numero;

@@ -966,9 +966,22 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Crosscutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Crosscutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crosscutting.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Crosscutting": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -2915,6 +2928,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Crosscutting/1.0.0": {
+      "type": "project",
+      "path": "../Crosscutting/Crosscutting.csproj",
+      "msbuildProject": "../Crosscutting/Crosscutting.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -2923,6 +2941,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Crosscutting >= 1.0.0",
       "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.3",
@@ -2963,6 +2982,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj": {
+              "projectPath": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj"
+            },
             "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj": {
               "projectPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj"
             }

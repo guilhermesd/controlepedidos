@@ -1,11 +1,6 @@
 ﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
@@ -19,7 +14,7 @@ public class ClienteRepository : IClienteRepository
     }
 
     // Busca um cliente pelo CPF
-    public async Task<Cliente?> ObterPorCpfAsync(string cpf)
+    public async Task<Cliente> ObterPorCpfAsync(string cpf)
     {
         return await _context.Clientes
             .FirstOrDefaultAsync(c => c.Cpf.Numero == cpf);

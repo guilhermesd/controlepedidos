@@ -1,10 +1,7 @@
-﻿using Domain.Entities;
+﻿using Crosscutting.DTOs;
+using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -26,52 +23,35 @@ namespace Infrastructure.Repositories
         }
 
         // Método para obter todos os produtos
-        public async Task<List<Produto>> ObterProdutosAsync()
+        public async Task<List<Produto>> ObterProdutosAsync(ObterProdutosDTO obterProdutosDTO)
         {
-            return await _context.Produtos.ToListAsync();
+            var query = _context.Produtos.AsQueryable();
+
+            if (obterProdutosDTO.Id.HasValue)
+            {
+                query = query.Where(p => p.Id == obterProdutosDTO.Id.Value);
+            }
+
+            if (obterProdutosDTO.Categoria.HasValue)
+            {
+                query = query.Where(p => p.Categoria == (CategoriaProduto)obterProdutosDTO.Categoria.Value);
+            }
+
+            return await query.ToListAsync();
         }
 
-        // Método para obter produtos por categoria
-        public async Task<List<Produto>> ObterProdutosPorCategoriaAsync(CategoriaProduto categoria)
+        public async Task<bool> AtualizarProdutoAsync(Produto produtoAtualizado)
         {
-            return await _context.Produtos
-                                 .Where(p => p.Categoria == categoria)
-                                 .ToListAsync();
-        }
-
-        // Método para obter um produto por ID
-        public async Task<Produto> ObterProdutoPorIdAsync(int id)
-        {
-            return await _context.Produtos
-                                 .FirstOrDefaultAsync(p => p.Id == id);
-        }
-
-        // Método para atualizar um produto existente
-        public async Task<Produto> AtualizarProdutoAsync(int id, Produto produtoAtualizado)
-        {
-            var produto = await _context.Produtos.FindAsync(id);
-            if (produto == null)
-                return null;
-
-            produto.Nome = produtoAtualizado.Nome;
-            produto.Descricao = produtoAtualizado.Descricao;
-            produto.UrlImagem = produtoAtualizado.UrlImagem;
-            produto.Preco = produtoAtualizado.Preco;
-            produto.Categoria = produtoAtualizado.Categoria;
-
-            _context.Produtos.Update(produto);
+            // Update properties directly  
+            _context.Produtos.Update(produtoAtualizado);
             await _context.SaveChangesAsync();
-
-            return produto;
+            return true;
         }
 
         // Método para excluir um produto
         public async Task<bool> ExcluirProdutoAsync(int id)
         {
             var produto = await _context.Produtos.FindAsync(id);
-            if (produto == null)
-                return false;
-
             _context.Produtos.Remove(produto);
             await _context.SaveChangesAsync();
 

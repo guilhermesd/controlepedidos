@@ -1,5 +1,5 @@
-﻿using Application.DTOs;
-using AutoMapper;
+﻿using AutoMapper;
+using Crosscutting.DTOs;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;

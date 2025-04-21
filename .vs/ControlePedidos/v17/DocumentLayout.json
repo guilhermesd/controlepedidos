@@ -3,16 +3,80 @@
   "WorkspaceRootPath": "C:\\estudos_guilherme\\pedidos2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos_guilherme\\pedidos2\\application\\usecases\\produtos\\criarprodutousecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\usecases\\produtos\\criarprodutousecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13AAA5-47A2-4DA2-896B-950EA16EF94F}|Crosscutting\\Crosscutting.csproj|c:\\estudos_guilherme\\pedidos2\\crosscutting\\dtos\\obterprodutosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D13AAA5-47A2-4DA2-896B-950EA16EF94F}|Crosscutting\\Crosscutting.csproj|solutionrelative:crosscutting\\dtos\\obterprodutosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13AAA5-47A2-4DA2-896B-950EA16EF94F}|Crosscutting\\Crosscutting.csproj|c:\\estudos_guilherme\\pedidos2\\crosscutting\\crosscutting.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3D13AAA5-47A2-4DA2-896B-950EA16EF94F}|Crosscutting\\Crosscutting.csproj|solutionrelative:crosscutting\\crosscutting.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13AAA5-47A2-4DA2-896B-950EA16EF94F}|Crosscutting\\Crosscutting.csproj|c:\\estudos_guilherme\\pedidos2\\crosscutting\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D13AAA5-47A2-4DA2-896B-950EA16EF94F}|Crosscutting\\Crosscutting.csproj|solutionrelative:crosscutting\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos_guilherme\\pedidos2\\infrastructure\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos_guilherme\\pedidos2\\domain\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos_guilherme\\pedidos2\\application\\usecases\\clientes\\clientesusecases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\usecases\\clientes\\clientesusecases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos_guilherme\\pedidos2\\application\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos_guilherme\\pedidos2\\domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos_guilherme\\pedidos2\\infrastructure\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos_guilherme\\pedidos2\\domain\\interfaces\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos_guilherme\\pedidos2\\domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|c:\\estudos_guilherme\\pedidos2\\domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEB436C3-34A9-41EE-A377-4D2E1E71EB11}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\valueobjects\\cpf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\dockerfile.migrations||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\dockerfile.migrations||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|c:\\estudos_guilherme\\pedidos2\\api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4F58C89B-DB27-4E3D-9A93-3A75BC5FFAE7}|Api\\Api.csproj|solutionrelative:api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +86,251 @@
       "DocumentGroups": [
         {
           "DockedHeight": 177,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Api\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-08T05:17:28.983Z",
+              "DocumentIndex": 2,
+              "Title": "Crosscutting",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj",
+              "RelativeDocumentMoniker": "Crosscutting\\Crosscutting.csproj",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj",
+              "RelativeToolTip": "Crosscutting\\Crosscutting.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-21T06:38:18.54Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile",
-              "RelativeDocumentMoniker": "Api\\Dockerfile",
-              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile",
-              "RelativeToolTip": "Api\\Dockerfile",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-08T05:16:17.999Z"
+              "Title": "ObterProdutosDTO.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\DTOs\\ObterProdutosDTO.cs",
+              "RelativeDocumentMoniker": "Crosscutting\\DTOs\\ObterProdutosDTO.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\DTOs\\ObterProdutosDTO.cs",
+              "RelativeToolTip": "Crosscutting\\DTOs\\ObterProdutosDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:44:12.089Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "CriarProdutoUseCase.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "RelativeToolTip": "Application\\UseCases\\Produtos\\CriarProdutoUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:40:35.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProdutoDTO.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\DTOs\\ProdutoDTO.cs",
+              "RelativeDocumentMoniker": "Crosscutting\\DTOs\\ProdutoDTO.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\DTOs\\ProdutoDTO.cs",
+              "RelativeToolTip": "Crosscutting\\DTOs\\ProdutoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:38:22.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProdutoRepository.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:09:49.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IProdutoRepository.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Interfaces\\IProdutoRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IProdutoRepository.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Domain\\Interfaces\\IProdutoRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:09:05.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClientesUseCases.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "RelativeToolTip": "Application\\UseCases\\Clientes\\ClientesUseCases.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:35:24.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Mapping.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Application\\Mapping.cs",
+              "RelativeDocumentMoniker": "Application\\Mapping.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Application\\Mapping.cs",
+              "RelativeToolTip": "Application\\Mapping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:41:50.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ClienteRepository.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Repositories\\ClienteRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ClienteRepository.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Infrastructure\\Repositories\\ClienteRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ClienteRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:09:20.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\Produto.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Produto.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\Produto.cs",
+              "RelativeToolTip": "Domain\\Entities\\Produto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:06:15.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IClienteRepository.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Interfaces\\IClienteRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IClienteRepository.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Domain\\Interfaces\\IClienteRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IClienteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:09:03.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\Cliente.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Cliente.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\Cliente.cs",
+              "RelativeToolTip": "Domain\\Entities\\Cliente.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:06:22.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\ClienteController.cs",
               "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\Controllers\\ClienteController.cs",
               "RelativeToolTip": "Api\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAiwCUAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T05:40:51.109Z"
+              "WhenOpened": "2025-03-30T05:40:51.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Cpf.cs",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "RelativeToolTip": "Domain\\Entities\\ValueObjects\\Cpf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:07:50.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Dockerfile.migrations",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile.migrations",
+              "RelativeDocumentMoniker": "Api\\Dockerfile.migrations",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile.migrations",
+              "RelativeToolTip": "Api\\Dockerfile.migrations",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-09T13:00:29.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Api\\appsettings.json",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\appsettings.json",
+              "RelativeToolTip": "Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-08T05:18:57.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Api\\appsettings.Development.json",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\appsettings.Development.json",
+              "RelativeToolTip": "Api\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-08T05:18:54.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-08T05:17:28.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile",
+              "RelativeDocumentMoniker": "Api\\Dockerfile",
+              "ToolTip": "C:\\estudos_guilherme\\pedidos2\\Api\\Dockerfile",
+              "RelativeToolTip": "Api\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-08T05:16:17.999Z"
             }
           ]
         }

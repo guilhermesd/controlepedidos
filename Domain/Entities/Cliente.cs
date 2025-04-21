@@ -15,9 +15,6 @@ namespace Domain.Entities
         public string Nome { get; private set; }
         public string Email { get; private set; }
 
-        // Navegação para os Pedidos
-        public ICollection<Pedido> Pedidos { get; private set; }
-
         // Propriedade que contém o Value Object CPF
         public Cpf Cpf { get; set; }
 

@@ -1081,7 +1081,9 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AutoMapper": "14.0.0",
-          "Domain": "1.0.0"
+          "Crosscutting": "1.0.0",
+          "Domain": "1.0.0",
+          "Infrastructure": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
@@ -1090,9 +1092,22 @@
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Crosscutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Crosscutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crosscutting.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Crosscutting": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -1104,6 +1119,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Crosscutting": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.3",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.3",
@@ -3483,6 +3499,11 @@
       "type": "project",
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
+    },
+    "Crosscutting/1.0.0": {
+      "type": "project",
+      "path": "../Crosscutting/Crosscutting.csproj",
+      "msbuildProject": "../Crosscutting/Crosscutting.csproj"
     },
     "Domain/1.0.0": {
       "type": "project",

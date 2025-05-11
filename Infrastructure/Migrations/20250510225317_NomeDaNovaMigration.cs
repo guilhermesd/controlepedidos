@@ -8,6 +8,7 @@ namespace Infrastructure.Migrations
 {
     [ExcludeFromCodeCoverage] // Exclui toda a classe do coverage
 
+
     /// <inheritdoc />
     public partial class NomeDaNovaMigration : Migration
     {

@@ -8,9 +8,114 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  run-container:
+  sonar-community:
     runs-on: ubuntu-latest
+    services:
+      sonarqube:
+        image: sonarqube:community
+        ports:
+          - 9000:9000
+        options: >-
+          --health-cmd="curl -f http://localhost:9000 || exit 1"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
     steps:
-      - name: Run a container
-        run: |
-          docker run --rm hello-world
+    - name: Esperar SonarQube iniciar
+      run: |
+        echo "Esperando SonarQube ficar disponível..."
+        until curl -s http://localhost:9000 > /dev/null; do sleep 5; done
+
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET 8 SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Run tests with coverage
+      run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
+
+    - name: Instalar ferramentas e gerar token
+      run: |
+        sudo apt-get update && sudo apt-get install -y jq curl
+        TOKEN=$(curl -s -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
+        echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+
+    - name: Criar Quality Gate com 70% de cobertura
+      run: |
+        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create?name=Gate70"
+        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create_condition" \
+          -d "gateName=Gate70" \
+          -d "metric=coverage" \
+          -d "op=LT" \
+          -d "error=70" \
+          -d "type=INT"
+          
+    - name: Aplicar Quality Gate ao projeto
+      run: |
+        curl -s -u admin:$SONAR_TOKEN \
+          -X POST "http://localhost:9000/api/qualitygates/select" \
+          -d "projectKey=my-project-key" \
+          -d "gateName=Gate70"          
+
+    - name: Instalar e iniciar análise SonarScanner
+      run: |
+        dotnet tool install --global dotnet-sonarscanner
+        export PATH="$PATH:$HOME/.dotnet/tools"
+
+        dotnet sonarscanner begin \
+          /k:"my-project-key" \
+          /d:sonar.host.url="http://localhost:9000" \
+          /d:sonar.login="$SONAR_TOKEN" \
+          /d:sonar.cs.coverage.reportPaths="**/TestResults/**/coverage.cobertura.xml"
+
+    - name: Build project
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Finalizar análise
+      run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+
+    - name: Verificar status da Quality Gate
+      run: |
+        echo "Verificando status da Quality Gate..."
+
+        reportFile=".sonarqube/out/.sonar/report-task.txt"
+        if [ ! -f "$reportFile" ]; then
+          echo "Arquivo de relatório não encontrado: $reportFile"
+          exit 1
+        fi
+
+        analysisId=$(grep '^ceTaskId=' "$reportFile" | cut -d'=' -f2)
+        echo "Analysis ID: $analysisId"
+
+        STATUS=""
+        ATTEMPTS=0
+        MAX_ATTEMPTS=40
+
+        while [[ "$STATUS" != "SUCCESS" && "$STATUS" != "FAILED" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
+          STATUS=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/ce/task?id=$analysisId" | jq -r '.task.status // empty')
+          echo "Status da análise: ${STATUS:-vazio}"
+          ATTEMPTS=$((ATTEMPTS + 1))
+          sleep 3
+        done
+
+        if [[ "$STATUS" != "SUCCESS" ]]; then
+          echo "Análise não foi concluída com sucesso após espera. Status final: $STATUS"
+          exit 1
+        fi
+
+        # Verificar status da Quality Gate
+        qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status')
+        echo "Status da Quality Gate: $qualityGateStatus"
+
+        if [[ "$qualityGateStatus" != "OK" ]]; then
+          echo "A Quality Gate falhou! Cobertura abaixo do esperado."
+          exit 1
+        fi
+

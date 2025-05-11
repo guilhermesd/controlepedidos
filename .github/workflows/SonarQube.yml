@@ -19,7 +19,7 @@ jobs:
           --health-cmd="curl -f http://localhost:9000 || exit 1"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=5
+          --health-retries=10
 
     steps:
     - name: Esperar SonarQube iniciar
@@ -41,25 +41,27 @@ jobs:
     - name: Run tests with coverage
       run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
 
-    - name: Install ReportGenerator
+    - name: Instalar ferramentas e gerar token
       run: |
-        dotnet tool install --global dotnet-reportgenerator-globaltool
-        export PATH="$PATH:$HOME/.dotnet/tools"
-
-    - name: Generate coverage report
-      run: |
-        reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coveragereport
-
-    - name: Generate SonarQube Token
-      id: sonar-token
-      run: |
-        TOKEN=$(curl -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
+        sudo apt-get update && sudo apt-get install -y jq curl
+        TOKEN=$(curl -s -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
         echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
 
-    - name: Begin SonarQube analysis
+    - name: Criar Quality Gate com 70% de cobertura
+      run: |
+        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create?name=Gate70"
+        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create_condition" \
+          -d "gateName=Gate70" \
+          -d "metric=coverage" \
+          -d "op=LT" \
+          -d "error=70" \
+          -d "type=INT"
+
+    - name: Instalar e iniciar análise SonarScanner
       run: |
         dotnet tool install --global dotnet-sonarscanner
         export PATH="$PATH:$HOME/.dotnet/tools"
+
         dotnet sonarscanner begin \
           /k:"my-project-key" \
           /d:sonar.host.url="http://localhost:9000" \
@@ -69,5 +71,13 @@ jobs:
     - name: Build project
       run: dotnet build --no-restore --configuration Release
 
-    - name: End SonarQube analysis
+    - name: Finalizar análise
       run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+
+    - name: Aplicar Quality Gate ao projeto
+      run: |
+        PROJECT_KEY="my-project-key"
+        GATE_ID=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/qualitygates/show?name=Gate70" | jq -r '.id')
+        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/select" \
+          -d "projectKey=$PROJECT_KEY" \
+          -d "gateId=$GATE_ID"

@@ -8,9 +8,52 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  run-container:
+  sonar-community:
     runs-on: ubuntu-latest
+    services:
+      sonarqube:
+        image: sonarqube:community
+        ports:
+          - 9000:9000
+        options: >-
+          --health-cmd="curl -f http://localhost:9000 || exit 1"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
     steps:
-      - name: Run a container
-        run: |
-          docker run --rm hello-world
+    - name: Esperar SonarQube iniciar
+      run: |
+        echo "Esperando SonarQube ficar disponível..."
+        until curl -s http://localhost:9000 > /dev/null; do sleep 5; done
+
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET 8 SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Run tests with coverage
+      run: dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage"
+
+    - name: Begin SonarQube analysis
+      run: |
+        dotnet tool install --global dotnet-sonarscanner
+        export PATH="$PATH:$HOME/.dotnet/tools"
+        dotnet sonarscanner begin \
+          /k:"my-project-key" \
+          /d:sonar.host.url="http://localhost:9000" \
+          /d:sonar.login="admin" \
+          /d:sonar.password="admin" \
+          /d:sonar.cs.coverage.reportPaths="**/TestResults/**/coverage.cobertura.xml"
+
+    - name: Build project
+      run: dotnet build --no-restore --configuration Release
+
+    - name: End SonarQube analysis
+      run: dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="admin"

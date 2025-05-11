@@ -84,15 +84,25 @@ jobs:
     - name: Verificar status da Quality Gate
       run: |
         echo "Verificando status da Quality Gate..."
-        analysisId=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/ce/component?component=my-project-key" | jq -r '.queue[0].id')
 
+        reportFile=".sonarqube/out/.sonar/report-task.txt"
+        if [ ! -f "$reportFile" ]; then
+          echo "Arquivo de relatório não encontrado: $reportFile"
+          exit 1
+        fi
+
+        analysisId=$(grep '^ceTaskId=' "$reportFile" | cut -d'=' -f2)
+        echo "Analysis ID: $analysisId"
+
+        # Esperar a análise terminar
         STATUS=""
-        while [[ "$STATUS" != "SUCCESS" ]]; do
+        while [[ "$STATUS" != "SUCCESS" && "$STATUS" != "FAILED" ]]; do
           STATUS=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/ce/task?id=$analysisId" | jq -r '.task.status')
           echo "Status da análise: $STATUS"
-          [[ "$STATUS" == "PENDING" || "$STATUS" == "IN_PROGRESS" ]] && sleep 3
+          sleep 3
         done
 
+        # Verificar status da Quality Gate
         qualityGateStatus=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status')
         echo "Status da Quality Gate: $qualityGateStatus"
 

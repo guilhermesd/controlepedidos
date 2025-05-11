@@ -4,22 +4,11 @@ on:
   push:
     branches: [main]
   pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
   quality-gate:
     name: Verificar cobertura com SonarQube
     runs-on: ubuntu-latest
-    services:
-      sonarqube:
-        image: sonarqube:9.9-community
-        ports:
-          - 9000:9000
-        options: >-
-          --health-cmd="curl -f http://localhost:9000 || exit 1"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=10
 
     env:
       SONAR_HOST_URL: http://localhost:9000
@@ -29,11 +18,14 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Instalar dependências
+      - name: Instalar dependências e iniciar SonarQube
         run: |
-          sudo apt-get update && sudo apt-get install -y jq curl
+          sudo apt-get update && sudo apt-get install -y jq curl docker.io
 
-          echo "Aguardando o SonarQube estar disponível..."
+          echo "Iniciando SonarQube em container..."
+          docker run -d --name sonarqube -p 9000:9000 sonarqube:9.9-community
+
+          echo "Aguardando SonarQube iniciar..."
           for i in {1..30}; do
             STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:9000)
             echo "Tentativa $i - Status: $STATUS"
@@ -42,8 +34,14 @@ jobs:
           done
 
           echo "Gerando token do SonarQube..."
-          TOKEN=$(curl -s -u admin:admin -X POST "$SONAR_HOST_URL/api/user_tokens/generate?name=default-token" | jq -r '.token')
-          echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+          for i in {1..10}; do
+            TOKEN=$(curl -s -u admin:admin -X POST "$SONAR_HOST_URL/api/user_tokens/generate?name=default-token" | jq -r '.token')
+            if [[ "$TOKEN" != "null" && -n "$TOKEN" ]]; then
+              echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+              break
+            fi
+            sleep 5
+          done
 
       - name: Instalar .NET SDK
         uses: actions/setup-dotnet@v4

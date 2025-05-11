@@ -41,6 +41,21 @@ jobs:
     - name: Run tests with coverage
       run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
 
+    - name: Install ReportGenerator
+      run: |
+        dotnet tool install --global dotnet-reportgenerator-globaltool
+        export PATH="$PATH:$HOME/.dotnet/tools"
+
+    - name: Generate coverage report
+      run: |
+        reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coveragereport
+
+    - name: Generate SonarQube Token
+      id: sonar-token
+      run: |
+        TOKEN=$(curl -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
+        echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+
     - name: Begin SonarQube analysis
       run: |
         dotnet tool install --global dotnet-sonarscanner
@@ -48,12 +63,11 @@ jobs:
         dotnet sonarscanner begin \
           /k:"my-project-key" \
           /d:sonar.host.url="http://localhost:9000" \
-          /d:sonar.login="admin" \
-          /d:sonar.password="admin" \
+          /d:sonar.login="$SONAR_TOKEN" \
           /d:sonar.cs.coverage.reportPaths="**/TestResults/**/coverage.cobertura.xml"
 
     - name: Build project
       run: dotnet build --no-restore --configuration Release
 
     - name: End SonarQube analysis
-      run: dotnet sonarscanner end /d:sonar.login="admin" /d:sonar.password="admin"
+      run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"

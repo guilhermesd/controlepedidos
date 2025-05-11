@@ -94,7 +94,7 @@ namespace Tests.Unidade.Application.Middleares
         {
             // Arrange
             var context = new DefaultHttpContext();
-            var responseStream = new MemoryStream();
+            var responseStream = new MemoryStream(); 
             context.Response.Body = responseStream; 
 
             var mockRequestDelegate = new RequestDelegate(_ =>

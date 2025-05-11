@@ -4,11 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System.Diagnostics.CodeAnalysis;
 
 #nullable disable
 
 namespace Infrastructure.Migrations
 {
+    [ExcludeFromCodeCoverage] // Exclui toda a classe do coverage
+
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
     {
@@ -29,63 +32,12 @@ namespace Infrastructure.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("NumeroCpf")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
                     b.ToTable("Clientes");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Pagamento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool?>("Aprovado")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("IdentificadorPagamento")
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("PedidoId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PedidoId");
-
-                    b.ToTable("Pagamentos");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Pedido", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("ClienteId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Etapa")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClienteId");
-
-                    b.ToTable("Pedidos");
                 });
 
             modelBuilder.Entity("Domain.Entities.Produto", b =>
@@ -99,18 +51,19 @@ namespace Infrastructure.Migrations
                     b.Property<int>("Categoria")
                         .HasColumnType("int");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Descricao")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("PedidoId")
-                        .HasColumnType("int");
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
 
                     b.Property<decimal>("Preco")
                         .HasColumnType("decimal(65,30)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("UrlImagem")
+                        .HasColumnType("longtext");
 
-                    b.HasIndex("PedidoId");
+                    b.HasKey("Id");
 
                     b.ToTable("Produtos");
                 });
@@ -134,47 +87,26 @@ namespace Infrastructure.Migrations
                                 .HasForeignKey("ClienteId");
                         });
 
+                    b.OwnsOne("Domain.Entities.ValueObjects.Email", "Email", b1 =>
+                        {
+                            b1.Property<int>("ClienteId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Endereco")
+                                .HasColumnType("longtext")
+                                .HasColumnName("Email");
+
+                            b1.HasKey("ClienteId");
+
+                            b1.ToTable("Clientes");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ClienteId");
+                        });
+
                     b.Navigation("Cpf");
-                });
 
-            modelBuilder.Entity("Domain.Entities.Pagamento", b =>
-                {
-                    b.HasOne("Domain.Entities.Pedido", "Pedido")
-                        .WithMany("Pagamentos")
-                        .HasForeignKey("PedidoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pedido");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Pedido", b =>
-                {
-                    b.HasOne("Domain.Entities.Cliente", "Cliente")
-                        .WithMany("Pedidos")
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("Cliente");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Produto", b =>
-                {
-                    b.HasOne("Domain.Entities.Pedido", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("PedidoId");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Cliente", b =>
-                {
-                    b.Navigation("Pedidos");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Pedido", b =>
-                {
-                    b.Navigation("Pagamentos");
-
-                    b.Navigation("Produtos");
+                    b.Navigation("Email");
                 });
 #pragma warning restore 612, 618
         }

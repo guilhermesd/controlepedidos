@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Crosscutting.Exceptions;
+using Domain.Entities;
 using Domain.Interfaces;
 
 namespace Application.UseCases.Clientes
@@ -12,9 +13,9 @@ namespace Application.UseCases.Clientes
         public string Cpf { get; set; }
     }
 
-    public interface ICadastrarClienteUseCase
+    public interface ISalvarClienteUseCase
     {
-        Task<ClienteDTO> ExecutarAsync(ClienteDTO clienteDto);
+        Task<ClienteDTO> ExecutarAsync(int Id, ClienteDTO clienteDto);
     }
 
     public interface IObterClientePorCpfUseCase
@@ -22,32 +23,59 @@ namespace Application.UseCases.Clientes
         Task<ClienteDTO> ExecutarAsync(string cpf);
     }
 
+    public interface IRemoverClienteUseCase
+    {
+        Task ExecutarAsync(int id);
+    }
 
-    public class CadastrarClienteUseCase : ICadastrarClienteUseCase
+    public class SalvarClienteUseCase : ISalvarClienteUseCase
     {
         private readonly IClienteRepository _clienteRepository;
 
-        public CadastrarClienteUseCase(IClienteRepository clienteRepository)
+        public SalvarClienteUseCase(IClienteRepository clienteRepository)
         {
             _clienteRepository = clienteRepository;
         }
 
-        public async Task<ClienteDTO> ExecutarAsync(ClienteDTO clienteDto)
+        public async Task<ClienteDTO> ExecutarAsync(int Id, ClienteDTO clienteDto)
         {
-            var clienteExistente = await _clienteRepository.ObterPorCpfAsync(clienteDto.Cpf);
-            if (clienteExistente != null)
+
+            Cliente clientePersistido = null;   
+            if (Id == 0)
             {
-                throw new InvalidOperationException("Já existe um cliente cadastrado com esse CPF.");
+                var clienteExistente = await _clienteRepository.ObterPorCpfAsync(clienteDto.Cpf);
+                if (clienteExistente != null)
+                {
+                    throw new InvalidOperationException("Já existe um cliente cadastrado com esse CPF.");
+                }
+
+                clientePersistido = new Cliente(clienteDto.Nome, clienteDto.Cpf, clienteDto.Email);
+                await _clienteRepository.AdicionarAsync(clientePersistido);
             }
 
-            var cliente = new Cliente(clienteDto.Nome, clienteDto.Cpf, clienteDto.Email);
-            await _clienteRepository.AdicionarAsync(cliente);
+            if(Id > 0)
+            {
+                var clienteExistente = await _clienteRepository.ObterPorCpfAsync(clienteDto.Cpf);
+                if (clienteExistente != null && clienteExistente.Id != Id)
+                {
+                    throw new InvalidOperationException("Já existe um cliente cadastrado com esse CPF.");
+                }
+
+                clientePersistido = await _clienteRepository.ObterPorIdAsync(Id);
+
+                if (clientePersistido == null)
+                    throw new NotFoundException("Não encontrado");
+
+                clientePersistido.Update(clienteDto.Nome, clienteDto.Cpf, clienteDto.Email);
+                await _clienteRepository.AtualizarAsync(clientePersistido);
+            }
 
             return new ClienteDTO
             {
-                Id = cliente.Id,
-                Nome = cliente.Nome,
-                Cpf = cliente.Cpf.Numero
+                Id = clientePersistido.Id,
+                Nome = clientePersistido.Nome,
+                Cpf = clientePersistido.Cpf.Numero,
+                Email = clientePersistido.Email.Endereco,
             };
         }
     }
@@ -65,15 +93,34 @@ namespace Application.UseCases.Clientes
         {
             var cliente = await _clienteRepository.ObterPorCpfAsync(cpf);
             if (cliente == null)
-                return null;
+                throw new NotFoundException("Não encontrado");
 
             return new ClienteDTO
             {
                 Id = cliente.Id,
                 Nome = cliente.Nome,
-                Cpf = cliente.Cpf.Numero
+                Cpf = cliente.Cpf.Numero,
+                Email = cliente.Email.Endereco
             };
         }
     }
 
+    public class RemoverClienteUseCase : IRemoverClienteUseCase
+    {
+        private readonly IClienteRepository _clienteRepository;
+
+        public RemoverClienteUseCase(IClienteRepository clienteRepository)
+        {
+            _clienteRepository = clienteRepository;
+        }
+
+        public async Task ExecutarAsync(int id)
+        {
+            var cliente = await _clienteRepository.ObterPorIdAsync(id);
+            if (cliente == null)
+                throw new NotFoundException("Não encontrado");
+
+            await _clienteRepository.RemoverAsync(cliente);
+        }
+    }
 }

@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System.Diagnostics.CodeAnalysis;
 
 #nullable disable
 
 namespace Infrastructure.Migrations
 {
+    [ExcludeFromCodeCoverage] // Exclui toda a classe do coverage
+
     /// <inheritdoc />
     public partial class NomeDaMigration : Migration
     {

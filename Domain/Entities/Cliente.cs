@@ -1,9 +1,4 @@
 ﻿using Domain.Entities.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
@@ -12,19 +7,27 @@ namespace Domain.Entities
         private Cliente() { }
 
         public int Id { get; private set; }
-        public string Nome { get; private set; }
-        public string Email { get; private set; }
+        public string Nome { get; private set; } 
 
         // Propriedade que contém o Value Object CPF
-        public Cpf Cpf { get; set; }
+        public Cpf Cpf { get; private set; }
 
-        public string NumeroCpf { get; set; }
+        // Propriedade que contém o Value Object EMAIL
+        public Email Email { get; private set; }
 
         public Cliente(string nome, string cpf, string email)
         {
+            Update(nome, cpf, email);
+        }
+
+        public void Update(string nome, string cpf, string email)
+        {
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new ArgumentException("O nome do cliente não pode ser vazio ou nulo.", nameof(nome));
+
             Nome = nome;
             Cpf = new Cpf(cpf);
-            Email = email;
+            Email = new Email(email);
         }
     }
 }

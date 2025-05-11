@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj": {}
+    "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj": {
+    "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj",
+        "projectUniqueName": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj",
         "projectName": "Crosscutting",
-        "projectPath": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj",
-        "packagesPath": "C:\\Users\\ligia\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\obj\\",
+        "projectPath": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj",
+        "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
+        "outputPath": "C:\\estudos\\controlepedidos\\Crosscutting\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ligia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,30 +57,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj": {
+    "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\ligia\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos_guilherme\\pedidos2\\Domain\\obj\\",
+        "projectPath": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
+        "outputPath": "C:\\estudos\\controlepedidos\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ligia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,8 +105,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj": {
-                "projectPath": "C:\\estudos_guilherme\\pedidos2\\Crosscutting\\Crosscutting.csproj"
+              "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj": {
+                "projectPath": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj"
               }
             }
           }
@@ -131,12 +137,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

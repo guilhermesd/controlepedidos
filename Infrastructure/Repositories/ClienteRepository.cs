@@ -20,10 +20,31 @@ public class ClienteRepository : IClienteRepository
             .FirstOrDefaultAsync(c => c.Cpf.Numero == cpf);
     }
 
+    // Busca um cliente pelo ID
+    public async Task<Cliente> ObterPorIdAsync(int Id)
+    {
+        return await _context.Clientes
+            .FirstOrDefaultAsync(c => c.Id == Id);
+    }
+
     // Adiciona um novo cliente
     public async Task AdicionarAsync(Cliente cliente)
     {
         await _context.Clientes.AddAsync(cliente);
+        await _context.SaveChangesAsync();
+    }
+
+    // Atualiza um cliente existente
+    public async Task AtualizarAsync(Cliente cliente)
+    {
+        _context.Clientes.Update(cliente);
+        await _context.SaveChangesAsync();
+    }
+
+    // Remove um cliente existente
+    public async Task RemoverAsync(Cliente cliente)
+    {
+        _context.Clientes.Remove(cliente);
         await _context.SaveChangesAsync();
     }
 }

@@ -7,15 +7,18 @@ namespace Api.Controllers
     [Route("api/clientes")]
     public class ClienteController : ControllerBase
     {
-        private readonly ICadastrarClienteUseCase _cadastrarClienteUseCase;
+        private readonly ISalvarClienteUseCase _salvarClienteUseCase;
         private readonly IObterClientePorCpfUseCase _obterClientePorCpfUseCase;
+        private readonly IRemoverClienteUseCase _removerClienteUseCase;
 
         public ClienteController(
-            ICadastrarClienteUseCase cadastrarClienteUseCase,
-            IObterClientePorCpfUseCase obterClientePorCpfUseCase)
+            ISalvarClienteUseCase salvarClienteUseCase,
+            IObterClientePorCpfUseCase obterClientePorCpfUseCase,
+            IRemoverClienteUseCase removerClienteUseCase)
         {
-            _cadastrarClienteUseCase = cadastrarClienteUseCase;
+            _salvarClienteUseCase = salvarClienteUseCase;
             _obterClientePorCpfUseCase = obterClientePorCpfUseCase;
+            _removerClienteUseCase = removerClienteUseCase;
         }
 
         /// <summary>
@@ -26,18 +29,33 @@ namespace Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CadastrarCliente([FromBody] ClienteDTO clienteDto)
         {
-            if (clienteDto == null)
-                return BadRequest("Os dados do cliente são obrigatórios.");
+            var clienteCadastrado = await _salvarClienteUseCase.ExecutarAsync(0, clienteDto);
+            return CreatedAtAction(nameof(ObterClientePorCpf), new { cpf = clienteCadastrado.Cpf }, clienteCadastrado);
+        }
 
-            try
-            {
-                var clienteCadastrado = await _cadastrarClienteUseCase.ExecutarAsync(clienteDto);
-                return CreatedAtAction(nameof(ObterClientePorCpf), new { cpf = clienteCadastrado.Cpf }, clienteCadastrado);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return Conflict(ex.Message);
-            }
+        /// <summary>
+        /// Altera os dados de um cliente existente.
+        /// </summary>
+        /// <param name="Id">ID do cliente a ser alterado</param>
+        /// <param name="clienteDto">Dados atualizados do cliente</param>
+        /// <returns>204 No Content em caso de sucesso</returns>
+        [HttpPut("{Id}")]
+        public async Task<IActionResult> AlterarCliente(int Id, [FromBody] ClienteDTO clienteDto)
+        {
+            await _salvarClienteUseCase.ExecutarAsync(Id, clienteDto);
+            return NoContent(); // 204 - sucesso, sem retorno de conteúdo
+        }
+
+        /// <summary>
+        /// Deleta um cliente existente.
+        /// </summary>
+        /// <param name="Id">ID do cliente a ser alterado</param>
+        /// <returns>204 No Content em caso de sucesso</returns>
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> DeletarCliente(int Id)
+        {
+            await _removerClienteUseCase.ExecutarAsync(Id);
+            return NoContent(); // 204 - sucesso, sem retorno de conteúdo
         }
 
         /// <summary>
@@ -49,10 +67,6 @@ namespace Api.Controllers
         public async Task<IActionResult> ObterClientePorCpf(string cpf)
         {
             var cliente = await _obterClientePorCpfUseCase.ExecutarAsync(cpf);
-
-            if (cliente == null)
-                return NotFound("Cliente não encontrado.");
-
             return Ok(cliente);
         }
     }

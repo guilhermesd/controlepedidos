@@ -40,6 +40,18 @@ namespace Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
+
+        // Método para obter todos os produtos
+        public async Task<Produto> ObterProdutosPorIdAsync(int id)
+        {
+            return await _context.Produtos.Where(p => p.Id == id).FirstOrDefaultAsync();   
+        }
+
+        /// <summary>
+        /// Atualizar o produto
+        /// </summary>
+        /// <param name="produtoAtualizado"></param>
+        /// <returns></returns>
         public async Task<bool> AtualizarProdutoAsync(Produto produtoAtualizado)
         {
             // Update properties directly  

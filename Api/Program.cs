@@ -1,9 +1,12 @@
+using Application.Middleares;
 using Application.UseCases.Clientes;
+using Application.UseCases.Produtos;
 using Domain.Interfaces;
 using Infrastructure;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
+using System.Diagnostics.CodeAnalysis;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +22,13 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 // Injeção de dependências para Use Cases
-builder.Services.AddScoped<ICadastrarClienteUseCase, CadastrarClienteUseCase>();
+builder.Services.AddScoped<ISalvarClienteUseCase, SalvarClienteUseCase>();
 builder.Services.AddScoped<IObterClientePorCpfUseCase, ObterClientePorCpfUseCase>();
+builder.Services.AddScoped<IRemoverClienteUseCase, RemoverClienteUseCase>();
+
+builder.Services.AddScoped<ISalvarProdutoUseCase, SalvarProdutoUseCase>();
+builder.Services.AddScoped<IRemoverProdutoUseCase, RemoverProdutoUseCase>();
+builder.Services.AddScoped<IObterProdutosUseCase, ObterProdutosUseCase>();
 
 
 // Adiciona o DbContext com MySQL com resiliência a erros transitórios
@@ -38,10 +46,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionsMiddleware>();
 
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+[ExcludeFromCodeCoverage] // Exclui toda a classe do coverage
+public partial class Program { }

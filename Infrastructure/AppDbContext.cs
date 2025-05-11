@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Entities.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
@@ -18,6 +19,14 @@ namespace Infrastructure
                 .OwnsOne(c => c.Cpf, cpf =>
                 {
                     cpf.Property(p => p.Numero).HasColumnName("Cpf");
+                });
+
+
+            //// Configuração do Value Object CPF
+            modelBuilder.Entity<Cliente>()
+                .OwnsOne(c => c.Email, email =>
+                {
+                    email.Property(p => p.Endereco).HasColumnName("Email");
                 });
         }
     }

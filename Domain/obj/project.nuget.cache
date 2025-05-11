@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "baKQHL5u1kk=",
+  "dgSpecHash": "6B2uYd3lpX0=",
   "success": true,
-  "projectFilePath": "C:\\estudos_guilherme\\pedidos2\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\guilherme.sousa\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.15\\microsoft.netcore.app.ref.8.0.15.nupkg.sha512",
+    "C:\\Users\\guilherme.sousa\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.15\\microsoft.windowsdesktop.app.ref.8.0.15.nupkg.sha512",
+    "C:\\Users\\guilherme.sousa\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.15\\microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

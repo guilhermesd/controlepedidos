@@ -12,5 +12,6 @@ namespace Domain.Interfaces
         Task<List<Produto>> ObterProdutosAsync(ObterProdutosDTO obterProdutosDTO);
 
         Task<bool> ExcluirProdutoAsync(int id);
+        Task<Produto> ObterProdutosPorIdAsync(int id);
     }
 }

@@ -81,10 +81,22 @@ jobs:
     - name: Finalizar análise
       run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
-    - name: Aplicar Quality Gate ao projeto
+    - name: Verificar status da Quality Gate
       run: |
-        PROJECT_KEY="my-project-key"
-        GATE_ID=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/qualitygates/show?name=Gate70" | jq -r '.id')
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/select" \
-          -d "projectKey=$PROJECT_KEY" \
-          -d "gateId=$GATE_ID"
+        echo "Verificando status da Quality Gate..."
+        analysisId=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/ce/component?component=my-project-key" | jq -r '.queue[0].id')
+
+        STATUS=""
+        while [[ "$STATUS" != "SUCCESS" ]]; do
+          STATUS=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/ce/task?id=$analysisId" | jq -r '.task.status')
+          echo "Status da análise: $STATUS"
+          [[ "$STATUS" == "PENDING" || "$STATUS" == "IN_PROGRESS" ]] && sleep 3
+        done
+
+        qualityGateStatus=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status')
+        echo "Status da Quality Gate: $qualityGateStatus"
+
+        if [[ "$qualityGateStatus" != "OK" ]]; then
+          echo "A Quality Gate falhou! Cobertura abaixo do esperado."
+          exit 1
+        fi

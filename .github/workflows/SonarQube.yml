@@ -19,13 +19,38 @@ jobs:
           --health-cmd="curl -f http://localhost:9000 || exit 1"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=10
+          --health-retries=5
 
     steps:
+    - name: Instalar dependências
+      run: sudo apt-get update && sudo apt-get install -y curl jq
+
     - name: Esperar SonarQube iniciar
       run: |
         echo "Esperando SonarQube ficar disponível..."
         until curl -s http://localhost:9000 > /dev/null; do sleep 5; done
+
+    - name: Gerar token admin SonarQube
+      run: |
+        TOKEN=$(curl -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
+        echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+
+    - name: Criar Quality Gate com 70% de cobertura
+      run: |
+        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create?name=Gate70"
+        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create_condition" \
+          -d "gateName=Gate70" \
+          -d "metric=coverage" \
+          -d "op=LT" \
+          -d "error=70" \
+          -d "type=INT"
+
+    - name: Aplicar Quality Gate ao projeto
+      run: |
+        curl -s -u admin:$SONAR_TOKEN \
+          -X POST "http://localhost:9000/api/qualitygates/select" \
+          -d "projectKey=my-project-key" \
+          -d "gateName=Gate70"
 
     - name: Checkout code
       uses: actions/checkout@v3
@@ -41,27 +66,10 @@ jobs:
     - name: Run tests with coverage
       run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
 
-    - name: Instalar ferramentas e gerar token
-      run: |
-        sudo apt-get update && sudo apt-get install -y jq curl
-        TOKEN=$(curl -s -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
-        echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
-
-    - name: Criar Quality Gate com 70% de cobertura
-      run: |
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create?name=Gate70"
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create_condition" \
-          -d "gateName=Gate70" \
-          -d "metric=coverage" \
-          -d "op=LT" \
-          -d "error=70" \
-          -d "type=INT"
-
-    - name: Instalar e iniciar análise SonarScanner
+    - name: Begin SonarQube analysis
       run: |
         dotnet tool install --global dotnet-sonarscanner
         export PATH="$PATH:$HOME/.dotnet/tools"
-
         dotnet sonarscanner begin \
           /k:"my-project-key" \
           /d:sonar.host.url="http://localhost:9000" \
@@ -71,13 +79,5 @@ jobs:
     - name: Build project
       run: dotnet build --no-restore --configuration Release
 
-    - name: Finalizar análise
+    - name: End SonarQube analysis
       run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
-
-    - name: Aplicar Quality Gate ao projeto
-      run: |
-        PROJECT_KEY="my-project-key"
-        GATE_ID=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/qualitygates/show?name=Gate70" | jq -r '.id')
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/select" \
-          -d "projectKey=$PROJECT_KEY" \
-          -d "gateId=$GATE_ID"

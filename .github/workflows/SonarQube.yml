@@ -39,7 +39,7 @@ jobs:
       run: dotnet restore
 
     - name: Run tests with coverage
-      run: dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage"
+      run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
 
     - name: Begin SonarQube analysis
       run: |

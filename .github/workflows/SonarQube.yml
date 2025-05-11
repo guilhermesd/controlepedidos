@@ -94,19 +94,28 @@ jobs:
         analysisId=$(grep '^ceTaskId=' "$reportFile" | cut -d'=' -f2)
         echo "Analysis ID: $analysisId"
 
-        # Esperar a análise terminar
         STATUS=""
-        while [[ "$STATUS" != "SUCCESS" && "$STATUS" != "FAILED" ]]; do
-          STATUS=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/ce/task?id=$analysisId" | jq -r '.task.status')
-          echo "Status da análise: $STATUS"
+        ATTEMPTS=0
+        MAX_ATTEMPTS=40
+
+        while [[ "$STATUS" != "SUCCESS" && "$STATUS" != "FAILED" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
+          STATUS=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/ce/task?id=$analysisId" | jq -r '.task.status // empty')
+          echo "Status da análise: ${STATUS:-vazio}"
+          ATTEMPTS=$((ATTEMPTS + 1))
           sleep 3
         done
 
+        if [[ "$STATUS" != "SUCCESS" ]]; then
+          echo "Análise não foi concluída com sucesso após espera. Status final: $STATUS"
+          exit 1
+        fi
+
         # Verificar status da Quality Gate
-        qualityGateStatus=$(curl -s -u admin:$SONAR_TOKEN "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status')
+        qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status')
         echo "Status da Quality Gate: $qualityGateStatus"
 
         if [[ "$qualityGateStatus" != "OK" ]]; then
           echo "A Quality Gate falhou! Cobertura abaixo do esperado."
           exit 1
         fi
+

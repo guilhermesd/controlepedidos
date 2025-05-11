@@ -1,18 +1,18 @@
-name: SonarQube
+name: Quality Gate com SonarQube
 
 on:
   push:
-    branches:
-      - master
+    branches: [main]
   pull_request:
-    types: [opened, synchronize, reopened]
+	types: [opened, synchronize, reopened]
 
 jobs:
-  sonar-community:
+  quality-gate:
+    name: Verificar cobertura com SonarQube
     runs-on: ubuntu-latest
     services:
       sonarqube:
-        image: sonarqube:community
+        image: sonarqube:9.9-community
         ports:
           - 9000:9000
         options: >-
@@ -21,101 +21,97 @@ jobs:
           --health-timeout=5s
           --health-retries=10
 
+    env:
+      SONAR_HOST_URL: http://localhost:9000
+      PROJECT_KEY: my-project-key
+
     steps:
-    - name: Esperar SonarQube iniciar
-      run: |
-        echo "Esperando SonarQube ficar disponível..."
-        until curl -s http://localhost:9000 > /dev/null; do sleep 5; done
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Instalar dependências
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq curl
 
-    - name: Setup .NET 8 SDK
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+          echo "Aguardando o SonarQube estar disponível..."
+          for i in {1..30}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:9000)
+            echo "Tentativa $i - Status: $STATUS"
+            [[ "$STATUS" == "200" ]] && break
+            sleep 5
+          done
 
-    - name: Restore dependencies
-      run: dotnet restore
+          echo "Gerando token do SonarQube..."
+          TOKEN=$(curl -s -u admin:admin -X POST "$SONAR_HOST_URL/api/user_tokens/generate?name=default-token" | jq -r '.token')
+          echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
 
-    - name: Run tests with coverage
-      run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
+      - name: Instalar .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Instalar ferramentas e gerar token
-      run: |
-        sudo apt-get update && sudo apt-get install -y jq curl
-        TOKEN=$(curl -s -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
-        echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+      - name: Restaurar pacotes
+        run: dotnet restore
 
-    - name: Criar Quality Gate com 70% de cobertura
-      run: |
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create?name=Gate70"
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create_condition" \
-          -d "gateName=Gate70" \
-          -d "metric=coverage" \
-          -d "op=LT" \
-          -d "error=70" \
-          -d "type=INT"
-          
-    - name: Aplicar Quality Gate ao projeto
-      run: |
-        curl -s -u admin:$SONAR_TOKEN \
-          -X POST "http://localhost:9000/api/qualitygates/select" \
-          -d "projectKey=my-project-key" \
-          -d "gateName=Gate70"          
+      - name: Instalar ferramentas globais
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet tool install --global dotnet-reportgenerator-globaltool
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-    - name: Instalar e iniciar análise SonarScanner
-      run: |
-        dotnet tool install --global dotnet-sonarscanner
-        export PATH="$PATH:$HOME/.dotnet/tools"
+      - name: Rodar testes com cobertura
+        run: |
+          dotnet test --collect:"XPlat Code Coverage" --results-directory ./TestResults
 
-        dotnet sonarscanner begin \
-          /k:"my-project-key" \
-          /d:sonar.host.url="http://localhost:9000" \
-          /d:sonar.login="$SONAR_TOKEN" \
-          /d:sonar.cs.coverage.reportPaths="**/TestResults/**/coverage.cobertura.xml"
+      - name: Gerar relatório de cobertura
+        run: |
+          reportgenerator \
+            -reports:./TestResults/**/coverage.cobertura.xml \
+            -targetdir:coveragereport \
+            -reporttypes:Html
 
-    - name: Build project
-      run: dotnet build --no-restore --configuration Release
+      - name: Análise com SonarScanner
+        run: |
+          dotnet sonarscanner begin \
+            /k:"$PROJECT_KEY" \
+            /d:sonar.host.url="$SONAR_HOST_URL" \
+            /d:sonar.login="$SONAR_TOKEN" \
+            /d:sonar.cs.opencover.reportsPaths="./TestResults/**/coverage.cobertura.xml"
 
-    - name: Finalizar análise
-      run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+          dotnet build
 
-    - name: Verificar status da Quality Gate
-      run: |
-        echo "Verificando status da Quality Gate..."
+          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
-        reportFile=".sonarqube/out/.sonar/report-task.txt"
-        if [ ! -f "$reportFile" ]; then
-          echo "Arquivo de relatório não encontrado: $reportFile"
-          exit 1
-        fi
+      - name: Esperar e verificar status da Quality Gate
+        run: |
+          echo "Verificando status da Quality Gate..."
+          analysisId=""
+          for i in {1..10}; do
+            analysisId=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_analyses/search?project=$PROJECT_KEY" | jq -r '.analyses[0].analysis // empty')
+            [[ -n "$analysisId" ]] && break
+            echo "Esperando analysisId... ($i)"
+            sleep 5
+          done
 
-        analysisId=$(grep '^ceTaskId=' "$reportFile" | cut -d'=' -f2)
-        echo "Analysis ID: $analysisId"
+          if [[ -z "$analysisId" ]]; then
+            echo "❌ Não foi possível obter o analysisId"
+            exit 1
+          fi
 
-        STATUS=""
-        ATTEMPTS=0
-        MAX_ATTEMPTS=40
+          qualityGateStatus=""
+          ATTEMPTS=0
+          MAX_ATTEMPTS=10
 
-        while [[ "$STATUS" != "SUCCESS" && "$STATUS" != "FAILED" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
-          STATUS=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/ce/task?id=$analysisId" | jq -r '.task.status // empty')
-          echo "Status da análise: ${STATUS:-vazio}"
-          ATTEMPTS=$((ATTEMPTS + 1))
-          sleep 3
-        done
+          while [[ -z "$qualityGateStatus" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
+            sleep 5
+            qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status // empty')
+            echo "Tentativa $((ATTEMPTS+1)): Status da Quality Gate: ${qualityGateStatus:-vazio}"
+            ATTEMPTS=$((ATTEMPTS + 1))
+          done
 
-        if [[ "$STATUS" != "SUCCESS" ]]; then
-          echo "Análise não foi concluída com sucesso após espera. Status final: $STATUS"
-          exit 1
-        fi
+          if [[ "$qualityGateStatus" != "OK" ]]; then
+            echo "❌ Quality Gate falhou ou não pôde ser verificada."
+            exit 1
+          fi
 
-        # Verificar status da Quality Gate
-        qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status')
-        echo "Status da Quality Gate: $qualityGateStatus"
-
-        if [[ "$qualityGateStatus" != "OK" ]]; then
-          echo "A Quality Gate falhou! Cobertura abaixo do esperado."
-          exit 1
-        fi
-
+          echo "✅ Quality Gate OK!"

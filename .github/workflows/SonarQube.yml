@@ -4,14 +4,24 @@ on:
   push:
     branches: [main]
   pull_request:
+	types: [opened, synchronize, reopened]
 
 jobs:
   quality-gate:
     name: Verificar cobertura com SonarQube
     runs-on: ubuntu-latest
+    services:
+      sonarqube:
+        image: sonarqube:9.9-community
+        ports:
+          - 9000:9000
+        options: >-
+          --health-cmd="curl -f http://localhost:9000 || exit 1"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
 
     env:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       SONAR_HOST_URL: http://localhost:9000
       PROJECT_KEY: my-project-key
 
@@ -19,7 +29,23 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Instalar dependências do .NET
+      - name: Instalar dependências
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq curl
+
+          echo "Aguardando o SonarQube estar disponível..."
+          for i in {1..30}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:9000)
+            echo "Tentativa $i - Status: $STATUS"
+            [[ "$STATUS" == "200" ]] && break
+            sleep 5
+          done
+
+          echo "Gerando token do SonarQube..."
+          TOKEN=$(curl -s -u admin:admin -X POST "$SONAR_HOST_URL/api/user_tokens/generate?name=default-token" | jq -r '.token')
+          echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+
+      - name: Instalar .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
@@ -27,34 +53,57 @@ jobs:
       - name: Restaurar pacotes
         run: dotnet restore
 
-      - name: Rodar testes com cobertura
-        run: dotnet test --collect:"XPlat Code Coverage"
-
-      - name: Instalar dotnet-sonarscanner
-        run: dotnet tool install --global dotnet-sonarscanner
-
-      - name: Rodar análise com SonarScanner
+      - name: Instalar ferramentas globais
         run: |
-          dotnet sonarscanner begin /k:"$PROJECT_KEY" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet tool install --global dotnet-reportgenerator-globaltool
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Rodar testes com cobertura
+        run: |
+          dotnet test --collect:"XPlat Code Coverage" --results-directory ./TestResults
+
+      - name: Gerar relatório de cobertura
+        run: |
+          reportgenerator \
+            -reports:./TestResults/**/coverage.cobertura.xml \
+            -targetdir:coveragereport \
+            -reporttypes:Html
+
+      - name: Análise com SonarScanner
+        run: |
+          dotnet sonarscanner begin \
+            /k:"$PROJECT_KEY" \
+            /d:sonar.host.url="$SONAR_HOST_URL" \
+            /d:sonar.login="$SONAR_TOKEN" \
+            /d:sonar.cs.opencover.reportsPaths="./TestResults/**/coverage.cobertura.xml"
+
           dotnet build
+
           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
-      - name: Esperar análise terminar e verificar Quality Gate
+      - name: Esperar e verificar status da Quality Gate
         run: |
-          echo "Esperando status da Quality Gate..."
+          echo "Verificando status da Quality Gate..."
+          analysisId=""
+          for i in {1..10}; do
+            analysisId=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_analyses/search?project=$PROJECT_KEY" | jq -r '.analyses[0].analysis // empty')
+            [[ -n "$analysisId" ]] && break
+            echo "Esperando analysisId... ($i)"
+            sleep 5
+          done
 
-          # Buscar analysisId da última análise concluída
-          analysisId=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_analyses/search?project=$PROJECT_KEY" | jq -r '.analyses[0].analysis')
+          if [[ -z "$analysisId" ]]; then
+            echo "❌ Não foi possível obter o analysisId"
+            exit 1
+          fi
 
-          echo "Último analysisId: $analysisId"
-
-          # Esperar até que o status seja disponível
           qualityGateStatus=""
           ATTEMPTS=0
           MAX_ATTEMPTS=10
 
           while [[ -z "$qualityGateStatus" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
-            sleep 3
+            sleep 5
             qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status // empty')
             echo "Tentativa $((ATTEMPTS+1)): Status da Quality Gate: ${qualityGateStatus:-vazio}"
             ATTEMPTS=$((ATTEMPTS + 1))

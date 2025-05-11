@@ -1,117 +1,68 @@
-name: SonarQube
+name: Quality Gate com SonarQube
 
 on:
   push:
-    branches:
-      - master
+    branches: [main]
   pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
-  sonar-community:
+  quality-gate:
+    name: Verificar cobertura com SonarQube
     runs-on: ubuntu-latest
-    services:
-      sonarqube:
-        image: sonarqube:community
-        ports:
-          - 9000:9000
-        options: >-
-          --health-cmd="curl -f http://localhost:9000 || exit 1"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=10
+
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST_URL: http://localhost:9000
+      PROJECT_KEY: my-project-key
 
     steps:
-    - name: Esperar SonarQube iniciar
-      run: |
-        echo "Esperando SonarQube ficar disponível..."
-        until curl -s http://localhost:9000 > /dev/null; do sleep 5; done
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Instalar dependências do .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Setup .NET 8 SDK
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+      - name: Restaurar pacotes
+        run: dotnet restore
 
-    - name: Restore dependencies
-      run: dotnet restore
+      - name: Rodar testes com cobertura
+        run: dotnet test --collect:"XPlat Code Coverage"
 
-    - name: Run tests with coverage
-      run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
+      - name: Instalar dotnet-sonarscanner
+        run: dotnet tool install --global dotnet-sonarscanner
 
-    - name: Instalar ferramentas e gerar token
-      run: |
-        sudo apt-get update && sudo apt-get install -y jq curl
-        TOKEN=$(curl -s -u admin:admin -X POST "http://localhost:9000/api/user_tokens/generate?name=default-token" | jq -r '.token')
-        echo "SONAR_TOKEN=$TOKEN" >> $GITHUB_ENV
+      - name: Rodar análise com SonarScanner
+        run: |
+          dotnet sonarscanner begin /k:"$PROJECT_KEY" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
+          dotnet build
+          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
-    - name: Criar Quality Gate com 70% de cobertura
-      run: |
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create?name=Gate70"
-        curl -s -u admin:$SONAR_TOKEN -X POST "http://localhost:9000/api/qualitygates/create_condition" \
-          -d "gateName=Gate70" \
-          -d "metric=coverage" \
-          -d "op=LT" \
-          -d "error=70" \
-          -d "type=INT"
-          
-    - name: Aplicar Quality Gate ao projeto
-      run: |
-        curl -s -u admin:$SONAR_TOKEN \
-          -X POST "http://localhost:9000/api/qualitygates/select" \
-          -d "projectKey=my-project-key" \
-          -d "gateName=Gate70"          
+      - name: Esperar análise terminar e verificar Quality Gate
+        run: |
+          echo "Esperando status da Quality Gate..."
 
-    - name: Instalar e iniciar análise SonarScanner
-      run: |
-        dotnet tool install --global dotnet-sonarscanner
-        export PATH="$PATH:$HOME/.dotnet/tools"
+          # Buscar analysisId da última análise concluída
+          analysisId=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_analyses/search?project=$PROJECT_KEY" | jq -r '.analyses[0].analysis')
 
-        dotnet sonarscanner begin \
-          /k:"my-project-key" \
-          /d:sonar.host.url="http://localhost:9000" \
-          /d:sonar.login="$SONAR_TOKEN" \
-          /d:sonar.cs.coverage.reportPaths="**/TestResults/**/coverage.cobertura.xml"
+          echo "Último analysisId: $analysisId"
 
-    - name: Build project
-      run: dotnet build --no-restore --configuration Release
+          # Esperar até que o status seja disponível
+          qualityGateStatus=""
+          ATTEMPTS=0
+          MAX_ATTEMPTS=10
 
-    - name: Finalizar análise
-      run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+          while [[ -z "$qualityGateStatus" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
+            sleep 3
+            qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status // empty')
+            echo "Tentativa $((ATTEMPTS+1)): Status da Quality Gate: ${qualityGateStatus:-vazio}"
+            ATTEMPTS=$((ATTEMPTS + 1))
+          done
 
-    - name: Verificar status da Quality Gate
-      run: |
-        echo "Verificando status da Quality Gate..."
+          if [[ "$qualityGateStatus" != "OK" ]]; then
+            echo "❌ Quality Gate falhou ou não pôde ser verificada."
+            exit 1
+          fi
 
-        qualityGateStatus=""
-        ATTEMPTS=0
-        MAX_ATTEMPTS=10
-
-        while [[ -z "$qualityGateStatus" && $ATTEMPTS -lt $MAX_ATTEMPTS ]]; do
-          sleep 2
-          qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status // empty')
-          echo "Tentativa $((ATTEMPTS+1)): Status da Quality Gate: ${qualityGateStatus:-vazio}"
-          ATTEMPTS=$((ATTEMPTS + 1))
-        done
-
-        if [[ "$qualityGateStatus" != "OK" ]]; then
-          echo "A Quality Gate falhou! Cobertura abaixo do esperado ou status não disponível."
-          exit 1
-        fi
-
-        if [[ "$STATUS" != "SUCCESS" ]]; then
-          echo "Análise não foi concluída com sucesso após espera. Status final: $STATUS"
-          exit 1
-        fi
-
-        # Verificar status da Quality Gate
-        qualityGateStatus=$(curl -s -u $SONAR_TOKEN: "http://localhost:9000/api/qualitygates/project_status?analysisId=$analysisId" | jq -r '.projectStatus.status')
-        echo "Status da Quality Gate: $qualityGateStatus"
-
-        if [[ "$qualityGateStatus" != "OK" ]]; then
-          echo "A Quality Gate falhou! Cobertura abaixo do esperado."
-          exit 1
-        fi
-
+          echo "✅ Quality Gate OK!"

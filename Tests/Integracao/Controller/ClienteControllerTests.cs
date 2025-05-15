@@ -17,7 +17,7 @@ namespace Tests.Integracao.Controller
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase(databaseName: "TesteDb")
-                .Options;
+                .Options; 
 
             return new AppDbContext(options);
         }

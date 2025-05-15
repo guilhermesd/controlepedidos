@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\estudos\\controlepedidos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos\\controlepedidos\\infrastructure\\migrations\\20250330134756_nomedamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20250330134756_nomedamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos\\controlepedidos\\infrastructure\\migrations\\20250510225317_nomedanovamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20250510225317_nomedanovamigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|c:\\estudos\\controlepedidos\\infrastructure\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB810897-17AF-4744-B3CB-D5ECF00F12B8}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|c:\\estudos\\controlepedidos\\tests\\unidade\\application\\middleares\\exceptionsmiddlewaretests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|solutionrelative:tests\\unidade\\application\\middleares\\exceptionsmiddlewaretests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos\\controlepedidos\\application\\middleares\\exceptionsmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\middleares\\exceptionsmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|c:\\estudos\\controlepedidos\\tests\\bdd\\cadastrarcliente.feature||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|solutionrelative:tests\\bdd\\cadastrarcliente.feature||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|c:\\estudos\\controlepedidos\\application\\middleares\\exceptionsmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB89C528-0557-4F1F-964A-EAC5540BDF9D}|Application\\Application.csproj|solutionrelative:application\\middleares\\exceptionsmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{883C79E7-66B6-4B2A-B183-95D0134EF2C5}|Tests\\Tests.csproj|c:\\estudos\\controlepedidos\\tests\\bdd\\cadastrarclientesteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,17 +62,56 @@
       "DocumentGroups": [
         {
           "DockedHeight": 177,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\estudos\\controlepedidos\\Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\estudos\\controlepedidos\\Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T06:31:59.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20250330134756_NomeDaMigration.cs",
+              "DocumentMoniker": "C:\\estudos\\controlepedidos\\Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "ToolTip": "C:\\estudos\\controlepedidos\\Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20250330134756_NomeDaMigration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T05:43:40.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250510225317_NomeDaNovaMigration.cs",
+              "DocumentMoniker": "C:\\estudos\\controlepedidos\\Infrastructure\\Migrations\\20250510225317_NomeDaNovaMigration.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250510225317_NomeDaNovaMigration.cs",
+              "ToolTip": "C:\\estudos\\controlepedidos\\Infrastructure\\Migrations\\20250510225317_NomeDaNovaMigration.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20250510225317_NomeDaNovaMigration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T00:47:54.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ExceptionsMiddlewareTests.cs",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Tests\\Unidade\\Application\\Middleares\\ExceptionsMiddlewareTests.cs",
               "RelativeDocumentMoniker": "Tests\\Unidade\\Application\\Middleares\\ExceptionsMiddlewareTests.cs",
               "ToolTip": "C:\\estudos\\controlepedidos\\Tests\\Unidade\\Application\\Middleares\\ExceptionsMiddlewareTests.cs",
               "RelativeToolTip": "Tests\\Unidade\\Application\\Middleares\\ExceptionsMiddlewareTests.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAgwFwAAAALAAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAgwGAAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T00:45:20.679Z",
               "EditorCaption": ""
@@ -99,11 +150,19 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CadastrarCliente.feature",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Tests\\BDD\\CadastrarCliente.feature",
               "RelativeDocumentMoniker": "Tests\\BDD\\CadastrarCliente.feature",
@@ -116,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Tests.csproj",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Tests\\Tests.csproj",
               "RelativeDocumentMoniker": "Tests\\Tests.csproj",
@@ -129,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ExceptionsMiddleware.cs",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Application\\Middleares\\ExceptionsMiddleware.cs",
               "RelativeDocumentMoniker": "Application\\Middleares\\ExceptionsMiddleware.cs",
@@ -142,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "CadastrarClienteSteps.cs",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Tests\\BDD\\CadastrarClienteSteps.cs",
               "RelativeDocumentMoniker": "Tests\\BDD\\CadastrarClienteSteps.cs",
@@ -155,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ClientesUseCases.cs",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Application\\UseCases\\Clientes\\ClientesUseCases.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\Clientes\\ClientesUseCases.cs",
@@ -167,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "specflow.json",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Tests\\BDD\\specflow.json",
               "RelativeDocumentMoniker": "Tests\\BDD\\specflow.json",
@@ -180,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Api\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\ClienteController.cs",
@@ -192,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Api\\Program.cs",
               "RelativeDocumentMoniker": "Api\\Program.cs",
@@ -204,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\estudos\\controlepedidos\\Api\\appsettings.json",
               "RelativeDocumentMoniker": "Api\\appsettings.json",

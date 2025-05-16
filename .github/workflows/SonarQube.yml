@@ -1,27 +1,34 @@
 name: SonarQube
+
 on:
-  push:
+  pull_request:
     branches:
       - main
+
 jobs:
   build:
     name: Build and analyze
     runs-on: windows-latest
+
     steps:
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: 17
-          distribution: 'zulu' # Alternative distribution options are available.
-      - uses: actions/checkout@v4
+          distribution: 'zulu'
+
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
+
       - name: Cache SonarQube Cloud packages
         uses: actions/cache@v4
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+
       - name: Cache SonarQube Cloud scanner
         id: cache-sonar-scanner
         uses: actions/cache@v4
@@ -29,17 +36,45 @@ jobs:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
+
       - name: Install SonarQube Cloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
-      - name: Build and analyze
+
+      - name: Begin SonarQube analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"postech_pedidos" /o:"postech" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"postech_pedidos" /o:"postech" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="coverlet/reports/Cobertura.xml"
+
+      - name: Run tests with coverage
+        run: |
+          dotnet test --collect:"XPlat Code Coverage" --results-directory coverlet
+
+      - name: End SonarQube analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: powershell
+        run: |
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
+      - name: Validação total de cobertura de código permitida
+        shell: pwsh
+        run: |
+          $minCoverage = 70
+          $coverageReportPath = "$PWD/coverlet/TestResults/Coverage/Cobertura.xml"
+
+          [xml]$coverageReport = Get-Content $coverageReportPath
+          $coveragePercentage = $coverageReport.SelectSingleNode("//coverage").GetAttribute("line-rate")
+          $coveragePercentagePerc = [math]::Round(([decimal]$coveragePercentage * 100), 2)
+
+          if ($coveragePercentagePerc -lt $minCoverage) {
+              Write-Host "❌ Cobertura de código $coveragePercentagePerc% está abaixo de $minCoverage%"
+              exit 1
+          } else {
+              Write-Host "✅ Cobertura de código $coveragePercentagePerc% está acima de $minCoverage%"
+          }

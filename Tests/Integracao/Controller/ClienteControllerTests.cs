@@ -7,7 +7,6 @@ using Infrastructure;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace Tests.Integracao.Controller
 {

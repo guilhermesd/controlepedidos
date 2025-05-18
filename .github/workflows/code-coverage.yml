@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  validador-cobertura-tests-70:
+  validador-cobertura-testes-70:
     runs-on: windows-latest
 
     steps:

@@ -290,6 +290,3 @@ C:\estudos\controlepedidos\Api\obj\Debug\net8.0\refint\Api.dll
 C:\estudos\controlepedidos\Api\obj\Debug\net8.0\Api.pdb
 C:\estudos\controlepedidos\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\estudos\controlepedidos\Api\obj\Debug\net8.0\ref\Api.dll
-C:\estudos\controlepedidos\Api\bin\Debug\net8.0\Api.staticwebassets.endpoints.json
-C:\estudos\controlepedidos\Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\estudos\controlepedidos\Api\obj\Debug\net8.0\staticwebassets\msbuild.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

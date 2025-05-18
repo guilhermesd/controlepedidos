@@ -653,10 +653,7 @@
       "System.Threading.Channels/7.0.0": {},
       "Crosscutting/1.0.0": {
         "runtime": {
-          "Crosscutting.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Crosscutting.dll": {}
         }
       },
       "Domain/1.0.0": {
@@ -664,10 +661,7 @@
           "Crosscutting": "1.0.0"
         },
         "runtime": {
-          "Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Domain.dll": {}
         }
       }
     }

@@ -38,7 +38,7 @@ namespace Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> AtualizarProduto(int id, [FromBody] ProdutoDTO produtoDto)
         {
-            await _salvarProdutoUseCase.Executar(id, produtoDto);
+            await _salvarProdutoUseCase.Executar(id, produtoDto); 
             return NoContent();
         }
 

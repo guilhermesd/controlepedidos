@@ -39,7 +39,7 @@ namespace Api.Controllers
         public async Task<IActionResult> AtualizarProduto(int id, [FromBody] ProdutoDTO produtoDto)
         {
             await _salvarProdutoUseCase.Executar(id, produtoDto); 
-            return NoContent();
+            return NoContent(); 
         }
 
         /// <summary>

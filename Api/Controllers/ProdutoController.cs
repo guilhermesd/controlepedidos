@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/produtos")]
     public class ProdutoController : ControllerBase
     {
         private readonly ISalvarProdutoUseCase _salvarProdutoUseCase;
@@ -40,7 +40,6 @@ namespace Api.Controllers
         {
             await _salvarProdutoUseCase.Executar(id, produtoDto);
             return NoContent();
-
         }
 
         /// <summary>

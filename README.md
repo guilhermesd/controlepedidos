@@ -34,3 +34,23 @@ Este projeto faz parte de um sistema de **microsserviços**, divididos da seguin
 - OpenAPI (Swagger)
 
 ---
+
+### ✅ Validações automáticas nos Pull Requests
+
+Todo Pull Request enviado para a branch `main` passa por uma verificação automática via **GitHub Actions**, garantindo a qualidade e cobertura dos testes do código. Os seguintes checks são executados:
+
+- ✅ **Code Coverage / validador-cobertura-testes-70**  
+  Verifica se o projeto atinge no mínimo **70% de cobertura de testes automatizados**.  
+  ✔️ *Status esperado: "Successful"*
+
+- ✅ **SonarCloud Code Analysis**  
+  Realiza a análise de qualidade estática do código usando **SonarCloud**, incluindo métricas como bugs, vulnerabilidades e code smells.  
+  ✔️ *Status esperado: "Quality Gate passed"*
+
+Esses checks são **obrigatórios** para permitir o _merge_ na `main`. Isso assegura que apenas códigos bem testados e com boa qualidade entram em produção.
+
+#### 📸 Exemplo visual dos checks no GitHub:
+
+![Validações nos Pull Requests](./caminho/para/imagem.png)
+
+---

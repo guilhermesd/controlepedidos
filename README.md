@@ -15,8 +15,8 @@ Este repositório contém o microsserviço **Controle de Pedidos**, responsável
 
 Este projeto faz parte de um sistema de **microsserviços**, divididos da seguinte forma:
 
-| Microsserviço | Descrição                                | Repositório | Cobertura de Testes |
-|---------------|--------------------------------------------|-------------|----------------------|
+| Microsserviço   | Descrição                                | Repositório | Cobertura de Testes |
+|-----------------|--------------------------------------------|-------------|----------------------|
 | 🍽️ Pedidos     | Gerenciamento de pedidos dos clientes     | [github.com/seu-usuario/ms-pedidos](https://github.com/seu-usuario/ms-pedidos) | ![Cobertura Pedidos](docs/cobertura-pedidos.png) |
 | 🧾 Pagamentos  | Processamento de pagamentos e faturas     | [github.com/seu-usuario/ms-pagamentos](https://github.com/seu-usuario/ms-pagamentos) | ![Cobertura Pagamentos](docs/cobertura-pagamentos.png) |
 | 👨‍🍳 Produção    | Controle de produção e estoque            | [github.com/seu-usuario/ms-producao](https://github.com/seu-usuario/ms-producao) | ![Cobertura Produção](docs/cobertura-producao.png) |

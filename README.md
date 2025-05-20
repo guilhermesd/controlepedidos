@@ -24,13 +24,13 @@ Este projeto faz parte de um sistema de **microsserviços**, divididos da seguin
 
 ## 🧩 Infraestrutura do Sistema
 
-Este sistema é composto por microsserviços que atuam em diferentes etapas do fluxo de pedidos em um restaurante, além de um projeto de infraestrutura responsável por orquestrar a autenticação via API Gateway e Lambda:
+ Projetos de infraestrutura responsáveis por autenticação, banco de dados e orquestração via Kubernetes. Todos os recursos são provisionados utilizando **Terraform**:
 
-| Repositório                                             | Descrição                                                                                   |
-|---------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 🧰 [pedidos-api-gateway-lambda](https://github.com/guilhermesd/pedidos-api-gateway-lambda) | Projeto Terraform que provisiona o API Gateway e uma função AWS Lambda para autenticação.   |
-| 🍽️ [Pedidos](https://github.com/seu-usuario/controle-pedidos-pedidos)                      | Responsável por gerenciar os pedidos feitos pelos clientes no restaurante.                  |
-| 👩‍🍳 [Produção](https://github.com/seu-usuario/controle-pedidos-producao)                  | Gerencia a fila de preparo dos pedidos na cozinha do restaurante.                           ||
+| Repositório                                                                 | Descrição                                                                                                         |
+|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| 🔐 [pedidos-api-gateway-lambda](https://github.com/guilhermesd/pedidos-api-gateway-lambda) | Projeto Terraform que provisiona o API Gateway e uma função AWS Lambda para autenticação de clientes.            |
+| 🗄️ [controlepedidosdb](https://github.com/guilhermesd/controlepedidosdb)                       | Projeto Terraform responsável por criar e gerenciar o banco de dados MySQL RDS usado pelo microsserviço de gerenciamento. |
+| ☸️ [controlepedidosK8s](https://github.com/guilhermesd/controlepedidosK8s)                    | Projeto Terraform responsável pela infraestrutura de orquestração dos microsserviços com Kubernetes.             |
 
 ---
 

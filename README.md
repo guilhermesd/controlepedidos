@@ -20,16 +20,13 @@ Este projeto faz parte de um sistema de **microsserviços**, divididos da seguin
 | 🍽️ Pedidos     | Gerenciamento de pedidos dos clientes     | [github.com/seu-usuario/ms-pedidos](https://github.com/seu-usuario/ms-pedidos) | ![Cobertura Pedidos](docs/cobertura-pedidos.png) |
 | 🧾 Pagamentos  | Processamento de pagamentos e faturas     | [github.com/seu-usuario/ms-pagamentos](https://github.com/seu-usuario/ms-pagamentos) | ![Cobertura Pagamentos](docs/cobertura-pagamentos.png) |
 | 👨‍🍳 Produção    | Controle de produção e estoque            | [github.com/seu-usuario/ms-producao](https://github.com/seu-usuario/ms-producao) | ![Cobertura Produção](docs/cobertura-producao.png) |
-| 🧍 Clientes    | Cadastro e manutenção de clientes         | **(Este repositório)** | ![Cobertura Clientes](docs/cobertura-clientes.png) |
-| 📦 Produtos    | Catálogo de produtos e preços             | **(Este repositório)** | ![Cobertura Produtos](docs/cobertura-produtos.png) |
-
-> 💡 Substitua os links e imagens acima conforme os reais disponíveis no seu repositório.
+| 🛠️ Gerenciador    | Cadastro e manutenção de clientes e produtos        | **(Este repositório)** | ![Cobertura Clientes](docs/cobertura-clientes.png) |
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-- ASP.NET Core 7
+- ASP.NET Core 8
 - Mysql
 - Docker
 - GitHub Actions (CI/CD)

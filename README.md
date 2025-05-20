@@ -17,10 +17,20 @@ Este projeto faz parte de um sistema de **microsserviços**, divididos da seguin
 
 | Microsserviço&nbsp;&nbsp;&nbsp;&nbsp;   | Descrição                                | Repositório | Cobertura de Testes |
 |-----------------|--------------------------------------------|-------------|----------------------|
-| 🍽️ Pedidos     | Gerenciamento de pedidos dos clientes     | [github.com/seu-usuario/ms-pedidos](https://github.com/seu-usuario/ms-pedidos) | ![Cobertura Pedidos](docs/cobertura-pedidos.png) |
-| 🧾 Pagamentos  | Processamento de pagamentos e faturas     | [github.com/seu-usuario/ms-pagamentos](https://github.com/seu-usuario/ms-pagamentos) | ![Cobertura Pagamentos](docs/cobertura-pagamentos.png) |
-| 👨‍🍳 Produção    | Controle de produção e estoque            | [github.com/seu-usuario/ms-producao](https://github.com/seu-usuario/ms-producao) | ![Cobertura Produção](docs/cobertura-producao.png) |
+| 🍽️ Pedidos     | Gerenciamento de pedidos dos clientes     | [https://github.com/guilhermesd/servicopedidos](https://github.com/guilhermesd/servicopedidos) | ![Cobertura Pedidos](docs/cobertura-pedidos.png) |
+| 🧾 Pagamentos  | Processamento de pagamentos e faturas     | [https://github.com/guilhermesd/servicopagamentos](https://github.com/guilhermesd/servicopagamentos) | ![Cobertura Pagamentos](docs/cobertura-pagamentos.png) |
+| 👨‍🍳 Produção    | Controle de produção e estoque            | [https://github.com/guilhermesd/servicoproducao](https://github.com/guilhermesd/servicoproducao) | ![Cobertura Produção](docs/cobertura-producao.png) |
 | 🛠️ Gerenciador    | Cadastro e manutenção de clientes e produtos        | **(Este repositório)** | ![Cobertura Clientes](docs/cobertura-clientes.png) |
+
+## 🧩 Infraestrutura do Sistema
+
+Este sistema é composto por microsserviços que atuam em diferentes etapas do fluxo de pedidos em um restaurante, além de um projeto de infraestrutura responsável por orquestrar a autenticação via API Gateway e Lambda:
+
+| Repositório                                             | Descrição                                                                                   |
+|---------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| 🧰 [pedidos-api-gateway-lambda](https://github.com/guilhermesd/pedidos-api-gateway-lambda) | Projeto Terraform que provisiona o API Gateway e uma função AWS Lambda para autenticação.   |
+| 🍽️ [Pedidos](https://github.com/seu-usuario/controle-pedidos-pedidos)                      | Responsável por gerenciar os pedidos feitos pelos clientes no restaurante.                  |
+| 👩‍🍳 [Produção](https://github.com/seu-usuario/controle-pedidos-producao)                  | Gerencia a fila de preparo dos pedidos na cozinha do restaurante.                           ||
 
 ---
 
@@ -51,6 +61,6 @@ Esses checks são **obrigatórios** para permitir o _merge_ na `main`. Isso asse
 
 #### 📸 Exemplo visual dos checks no GitHub:
 
-![Validações nos Pull Requests](./caminho/para/imagem.png)
+![Validações nos Pull Requests](./docs/checks-pullrequest.png)
 
 ---

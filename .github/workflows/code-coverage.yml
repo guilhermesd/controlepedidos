@@ -8,8 +8,6 @@ on:
 jobs:
   validador-cobertura-testes-70:
     runs-on: ubuntu-latest
-    outputs:
-      should_deploy: ${{ steps.coverage-check.outputs.should_deploy }}
 
     steps:
       - name: Checkout code
@@ -22,7 +20,7 @@ jobs:
 
       - name: Install ReportGenerator tool
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
-
+        # Adiciona o dotnet tools path ao PATH para poder usar reportgenerator diretamente
       - name: Add dotnet tools to PATH
         run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
@@ -32,18 +30,17 @@ jobs:
       - name: Run tests with coverage
         run: dotnet test --collect:"XPlat Code Coverage" --results-directory ./TestResults
 
-      - name: Convert to HTML report
+      - name: Convert to Cobertura format
         run: |
           reportgenerator \
             -reports:"**/coverage.cobertura.xml" \
             -targetdir:"coverlet/reports" \
-            -reporttypes:Html
+            -reporttypes:Cobertura
 
       - name: Install xmllint
         run: sudo apt-get update && sudo apt-get install -y libxml2-utils
-
+      
       - name: Validate code coverage
-        id: coverage-check
         shell: bash
         run: |
           minCoverage=70
@@ -51,22 +48,20 @@ jobs:
 
           if [ ! -f "$coverageReportPath" ]; then
             echo "Arquivo de cobertura não encontrado em $coverageReportPath"
-            echo "should_deploy=false" >> $GITHUB_OUTPUT
             exit 1
           fi
 
           coveragePercentage=$(xmllint --xpath "string(//coverage/@line-rate)" "$coverageReportPath")
           coveragePercentagePerc=$(echo "$coveragePercentage * 100" | bc -l | xargs printf "%.2f")
 
+          coverageInt=$(printf "%.0f" "$coveragePercentagePerc")
+
           if (( $(echo "$coveragePercentagePerc < $minCoverage" | bc -l) )); then
             echo "❌ Cobertura de código $coveragePercentagePerc% está abaixo de $minCoverage%"
-            echo "should_deploy=false" >> $GITHUB_OUTPUT
             exit 1
           else
             echo "✅ Cobertura de código $coveragePercentagePerc% está acima de $minCoverage%"
-            echo "should_deploy=true" >> $GITHUB_OUTPUT
           fi
-
   publicar-relatorio-coverage:
     needs: validador-cobertura-testes-70
     runs-on: ubuntu-latest

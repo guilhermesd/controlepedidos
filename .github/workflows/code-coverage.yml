@@ -62,25 +62,25 @@ jobs:
           else
             echo "✅ Cobertura de código $coveragePercentagePerc% está acima de $minCoverage%"
           fi
-  publicar-relatorio-coverage:
-    needs: validador-cobertura-testes-70
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 
-      - name: Setup Git
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
+          echo "📤 Publicando relatório HTML no GitHub Pages..."
 
-      - name: Copiar relatório para gh-pages
-        run: |
+          mkdir temp-report
+          cp -r coverlet/reports/* temp-report/
+
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+
           git fetch
-          git switch --orphan gh-pages
-          git rm -rf .
-          cp -r coverlet/reports/* .
+          git switch gh-pages || git switch --orphan gh-pages
+          git pull origin gh-pages || echo "Criando nova gh-pages"
+
+          mkdir -p coverage
+          rm -rf coverage/*
+          cp -r temp-report/* coverage/
+          rm -rf temp-report
+
           touch .nojekyll
           git add .
-          git commit -m "Atualiza relatório de cobertura"
-          git push --force origin gh-pages
+          git commit -m "🔄 Atualiza relatório de cobertura de testes"
+          git push origin gh-pages          

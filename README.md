@@ -64,3 +64,65 @@ Esses checks são **obrigatórios** para permitir o _merge_ na `main`. Isso asse
 ![Validações nos Pull Requests](./docs/checks-pullrequest.png)
 
 ---
+
+# Fluxo de Execução e Deploy
+
+Este documento descreve os passos necessários para executar o fluxo completo de deploy da aplicação.
+
+---
+
+### ✅ 1º Passo: Atualização de Credenciais AWS
+
+Atualize o arquivo de credenciais da AWS com os dados da conta **AWS Academy**.
+
+---
+
+### ✅ 2º Passo: Atualizar Secrets
+
+Execute o script abaixo localizado no repositório **controlepedidosK8s**:
+
+```bash
+atualizar-aws-secrets-multiplos-repos.bat
+```
+
+---
+
+### ✅ 3º Passo: Provisionamento do Banco de Dados (MySQL RDS)
+
+No repositório do **MySQL RDS**, abra um Pull Request para provisionar o banco.
+
+---
+
+### ✅ 4º Passo: Configuração da Connection String
+
+Copie a URL do banco gerada e cole na variável `terraform_connection_strings` do repositório **controlepedidosK8s**.
+
+> ⚠️ **Importante:** configure o **timeout** como **30 segundos**.
+
+---
+
+### ✅ 5º Passo: Deploy dos Microserviços
+
+Abra e aprove os Pull Requests de todos os repositórios de microserviços.
+
+---
+
+### ✅ 6º Passo: Deploy do Kubernetes
+
+Abra e aprove o Pull Request no repositório de **Kubernetes**.
+
+---
+
+### ✅ 7º Passo: Configuração do ApiGateway
+
+No repositório do **ApiGateway**, insira as URLs dos microserviços nas variáveis do Terraform.
+
+---
+
+### ✅ 8º Passo: Deploy do ApiGateway
+
+Abra e aprove o Pull Request no repositório do **ApiGateway**.
+
+---
+
+Pronto! Fluxo completo finalizado com sucesso ✨

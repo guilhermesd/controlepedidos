@@ -62,25 +62,22 @@ jobs:
           else
             echo "✅ Cobertura de código $coveragePercentagePerc% está acima de $minCoverage%"
           fi
+        - name: Generate HTML coverage report
+        run: |
+          reportgenerator \
+            -reports:"**/coverage.cobertura.xml" \
+            -targetdir:"coverage-report" \
+            -reporttypes:Html
 
-          echo "📤 Publicando relatório HTML no GitHub Pages..."
+      # Aqui começa a publicação no GitHub Pages
+      - name: Upload coverage report artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: coverage-report
 
-          mkdir temp-report
-          cp -r coverlet/reports/* temp-report/
-
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "github-actions"
-
-          git fetch
-          git switch gh-pages || git switch --orphan gh-pages
-          git pull origin gh-pages || echo "Criando nova gh-pages"
-
-          mkdir -p coverage
-          rm -rf coverage/*
-          cp -r temp-report/* coverage/
-          rm -rf temp-report
-
-          touch .nojekyll
-          git add .
-          git commit -m "🔄 Atualiza relatório de cobertura de testes"
-          git push origin gh-pages          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        with:
+          # O padrão já publica para o ambiente github-pages
+          # Não precisa de configuração extra se o repositório já estiver com Pages habilitado

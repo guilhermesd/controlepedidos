@@ -62,19 +62,3 @@ jobs:
           else
             echo "✅ Cobertura de código $coveragePercentagePerc% está acima de $minCoverage%"
           fi
-      - name: Generate HTML coverage report
-        run: |
-          reportgenerator \
-            -reports:"**/coverage.cobertura.xml" \
-            -targetdir:"coverage-report" \
-            -reporttypes:Html
-
-      - name: Upload coverage report artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: coverage-report
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-        with: {}

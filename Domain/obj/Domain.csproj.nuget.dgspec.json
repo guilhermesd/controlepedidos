@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj": {}
+    "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj": {
+    "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj",
+        "projectUniqueName": "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj",
         "projectName": "Crosscutting",
-        "projectPath": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj",
+        "projectPath": "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj",
         "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
         "outputPath": "C:\\estudos\\controlepedidos\\Crosscutting\\obj\\",
         "projectStyle": "PackageReference",
@@ -65,12 +65,12 @@
         }
       }
     },
-    "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj": {
+    "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj",
+        "projectPath": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
         "outputPath": "C:\\estudos\\controlepedidos\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -90,8 +90,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj": {
-                "projectPath": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj"
+              "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj": {
+                "projectPath": "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj"
               }
             }
           }

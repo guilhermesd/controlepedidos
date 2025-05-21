@@ -21,7 +21,6 @@ jobs:
       - name: Install ReportGenerator tool
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
         # Adiciona o dotnet tools path ao PATH para poder usar reportgenerator diretamente
-
       - name: Add dotnet tools to PATH
         run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
@@ -63,7 +62,6 @@ jobs:
           else
             echo "✅ Cobertura de código $coveragePercentagePerc% está acima de $minCoverage%"
           fi
-
       - name: Generate HTML coverage report
         run: |
           reportgenerator \

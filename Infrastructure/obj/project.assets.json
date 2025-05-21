@@ -2955,11 +2955,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\estudos\\controlepedidos\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\estudos\\controlepedidos\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-      "outputPath": "C:\\estudos\\controlepedidos\\Infrastructure\\obj\\",
+      "outputPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2977,11 +2977,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj": {
-              "projectPath": "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj"
+            "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj": {
+              "projectPath": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj"
             },
-            "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj"
+            "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj"
             }
           }
         }

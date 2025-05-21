@@ -14,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 177,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,10 +69,6 @@
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
@@ -80,7 +76,7 @@
               "RelativeDocumentMoniker": "Api\\Program.cs",
               "ToolTip": "C:\\estudos\\controlepedidos\\Api\\Program.cs",
               "RelativeToolTip": "Api\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T21:19:29.57Z",
               "EditorCaption": ""

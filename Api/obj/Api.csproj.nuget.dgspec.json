@@ -11,7 +11,7 @@
         "projectName": "Api",
         "projectPath": "C:\\estudos\\controlepedidos\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Api\\obj\\",
+        "outputPath": "C:\\estudos\\controlepedidos\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,7 +98,7 @@
         "projectName": "Application",
         "projectPath": "C:\\estudos\\controlepedidos\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Application\\obj\\",
+        "outputPath": "C:\\estudos\\controlepedidos\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -240,7 +240,7 @@
         "projectName": "Domain",
         "projectPath": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Domain\\obj\\",
+        "outputPath": "C:\\estudos\\controlepedidos\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -305,7 +305,7 @@
         "projectName": "Infrastructure",
         "projectPath": "C:\\estudos\\controlepedidos\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\obj\\",
+        "outputPath": "C:\\estudos\\controlepedidos\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -964,9 +964,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\estudos\\controlepedidos\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\estudos\\controlepedidos\\Application\\Application.csproj",
+      "projectPath": "C:\\estudos\\ControlePedidos\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
       "outputPath": "C:\\estudos\\controlepedidos\\Application\\obj\\",
       "projectStyle": "PackageReference",
@@ -986,14 +986,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj": {
-              "projectPath": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj"
+            "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj": {
+              "projectPath": "C:\\estudos\\ControlePedidos\\Crosscutting\\Crosscutting.csproj"
             },
-            "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj"
+            "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\estudos\\ControlePedidos\\Domain\\Domain.csproj"
             },
-            "C:\\estudos\\controlepedidos\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\estudos\\controlepedidos\\Infrastructure\\Infrastructure.csproj"
+            "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -1007,8 +1007,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -1034,26 +1033,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.15, 8.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.15, 8.0.15]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.15, 8.0.15]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

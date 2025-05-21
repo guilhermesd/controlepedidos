@@ -17,10 +17,10 @@ Este projeto faz parte de um sistema de **microsserviços**, divididos da seguin
 
 | Microsserviço&nbsp;&nbsp;&nbsp;&nbsp;   | Descrição                                | Repositório | Cobertura de Testes |
 |-----------------|--------------------------------------------|-------------|----------------------|
-| 🍽️ Pedidos     | Gerenciamento de pedidos dos clientes     | [https://github.com/guilhermesd/servicopedidos](https://github.com/guilhermesd/servicopedidos) | ![Cobertura Pedidos](docs/cobertura-pedidos.png) |
-| 🧾 Pagamentos  | Processamento de pagamentos e faturas     | [https://github.com/guilhermesd/servicopagamentos](https://github.com/guilhermesd/servicopagamentos) | ![Cobertura Pagamentos](docs/cobertura-pagamentos.png) |
-| 👨‍🍳 Produção    | Controle de produção e estoque            | [https://github.com/guilhermesd/servicoproducao](https://github.com/guilhermesd/servicoproducao) | ![Cobertura Produção](docs/cobertura-producao.png) |
-| 🛠️ Gerenciador    | Cadastro e manutenção de clientes e produtos        | **(Este repositório)** | ![Cobertura Clientes](docs/cobertura-clientes.png) |
+| 🍽️ Pedidos     | Gerenciamento de pedidos dos clientes     | [https://github.com/guilhermesd/servicopedidos](https://github.com/guilhermesd/servicopedidos) | ![Cobertura Pedidos](docs/cobertura_servicopedidos.png) |
+| 🧾 Pagamentos  | Processamento de pagamentos e faturas     | [https://github.com/guilhermesd/servicopagamentos](https://github.com/guilhermesd/servicopagamentos) | ![Cobertura Pagamentos](docs/cobertura_servicopagamentos.png) |
+| 👨‍🍳 Produção    | Controle de produção e estoque            | [https://github.com/guilhermesd/servicoproducao](https://github.com/guilhermesd/servicoproducao) | ![Cobertura Produção](docs/cobertura_servicoproducao.png) |
+| 🛠️ Gerenciador    | Cadastro e manutenção de clientes e produtos        | **(Este repositório)** | ![Cobertura Clientes](docs/cobertura_controlepedidos.png) |
 
 ## 🧩 Infraestrutura do Sistema
 

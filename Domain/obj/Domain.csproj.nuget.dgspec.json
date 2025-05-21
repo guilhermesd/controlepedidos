@@ -11,7 +11,7 @@
         "projectName": "Crosscutting",
         "projectPath": "C:\\estudos\\controlepedidos\\Crosscutting\\Crosscutting.csproj",
         "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-        "outputPath": "C:\\estudos\\ControlePedidos\\Crosscutting\\obj\\",
+        "outputPath": "C:\\estudos\\controlepedidos\\Crosscutting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",

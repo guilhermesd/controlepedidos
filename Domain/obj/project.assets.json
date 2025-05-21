@@ -36,7 +36,7 @@
       "projectName": "Domain",
       "projectPath": "C:\\estudos\\controlepedidos\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-      "outputPath": "C:\\estudos\\ControlePedidos\\Domain\\obj\\",
+      "outputPath": "C:\\estudos\\controlepedidos\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",

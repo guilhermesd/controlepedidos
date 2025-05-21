@@ -968,7 +968,7 @@
       "projectName": "Application",
       "projectPath": "C:\\estudos\\controlepedidos\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-      "outputPath": "C:\\estudos\\ControlePedidos\\Application\\obj\\",
+      "outputPath": "C:\\estudos\\controlepedidos\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",

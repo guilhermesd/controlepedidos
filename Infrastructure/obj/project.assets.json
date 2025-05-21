@@ -2959,7 +2959,7 @@
       "projectName": "Infrastructure",
       "projectPath": "C:\\estudos\\controlepedidos\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-      "outputPath": "C:\\estudos\\ControlePedidos\\Infrastructure\\obj\\",
+      "outputPath": "C:\\estudos\\controlepedidos\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",

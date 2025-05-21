@@ -3595,7 +3595,7 @@
       "projectName": "Api",
       "projectPath": "C:\\estudos\\controlepedidos\\Api\\Api.csproj",
       "packagesPath": "C:\\Users\\guilherme.sousa\\.nuget\\packages\\",
-      "outputPath": "C:\\estudos\\ControlePedidos\\Api\\obj\\",
+      "outputPath": "C:\\estudos\\controlepedidos\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\guilherme.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",

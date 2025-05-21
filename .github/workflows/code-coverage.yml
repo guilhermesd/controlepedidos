@@ -79,6 +79,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        with:
-          # O padrão já publica para o ambiente github-pages
-          # Não precisa de configuração extra se o repositório já estiver com Pages habilitado
+        with: {}
